@@ -250,7 +250,7 @@ export default function ProjectsPage() {
         <section className="border-t border-[#676f9d]/20 bg-[#2d3250]/90 backdrop-blur-sm">
           <div className="max-w-7xl mx-auto px-6 py-16 text-center">
             <h3 className="text-2xl md:text-3xl font-bold text-[#ffffff] mb-4">
-              Let's Build Something Amazing
+              Where Ideas Meet Execution
             </h3>
             <p className="text-[#ffffff]/70 mb-8 max-w-2xl mx-auto">
               Interested in collaborating or learning more about my work?
