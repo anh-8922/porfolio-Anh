@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  nextjs-portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: anh-portfolio
+    ports:
+      - "3000:3000"
+    volumes:
+      # Mount source code for development hot-reload
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
+    restart: unless-stopped
+
+  # Production service (uncomment to use)
+  # nextjs-portfolio-prod:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   container_name: anh-portfolio-prod
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     - NODE_ENV=production
+  #   restart: always
