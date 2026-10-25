@@ -13,10 +13,11 @@ A modern, sophisticated portfolio website showcasing full-stack development proj
 - 🎨 **Sophisticated Dark Theme** - Based on Yana Gladkaya's design palette
 - 🎭 **Animated Background** - Multi-layered gradient orbs and geometric shapes
 - 📱 **Fully Responsive** - Mobile-first design that works on all devices
-- ⚡ **Next.js 14** - Latest App Router with React Server Components
+- ⚡ **Next.js 14** - App Router with React Server Components
+- 🗂️ **Data-driven timeline** - all experience, projects and training live in one JSON file
 - 🐳 **Docker Ready** - Complete Docker setup for development and production
 - 🎯 **SEO Optimized** - Meta tags and semantic HTML
-- ♿ **Accessible** - WCAG AAA compliant color contrasts
+- ♿ **Accessible** - WCAG AA text contrast, semantic landmarks, reduced-motion support
 - 🎬 **Smooth Animations** - CSS animations and transitions
 
 ---
@@ -46,8 +47,8 @@ A modern, sophisticated portfolio website showcasing full-stack development proj
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/anh-portfolio.git
-cd anh-portfolio
+git clone https://github.com/anh-8922/porfolio-Anh.git
+cd porfolio-Anh
 
 # Start with Docker
 docker-compose up
@@ -67,10 +68,13 @@ anh-portfolio/
 ├── src/
 │   └── app/
 │       ├── projects/
-│       │   └── page.jsx          # Projects showcase page
+│       │   └── page.jsx          # Experience timeline page
 │       ├── layout.jsx             # Root layout with Raleway font
 │       ├── page.jsx               # Home/landing page
 │       └── globals.css            # Global styles & Tailwind
+│   ├── components/Timeline.jsx    # Timeline + project blocks
+│   ├── data/timeline.json         # ← ALL CONTENT LIVES HERE
+│   └── lib/format.js              # Date formatting
 ├── public/                        # Static assets
 ├── Dockerfile                     # Production Docker config
 ├── Dockerfile.dev                 # Development Docker config
@@ -130,40 +134,33 @@ npm start
 - Contact links
 - Sophisticated gradient orbs and geometric shapes
 
-### Projects Page (`/projects`)
-- 5 featured projects from professional experience
-- Project cards with hover effects
-- Technology tags
-- Status badges (Active/Completed)
-- External project links
+### Experience Page (`/projects`)
+- Timeline of roles, newest first, each with projects, tasks and stack tags
+- Side projects (shown when `sideProjects` has entries)
+- Training section
 
 ---
 
 ## 🎨 Customization
 
-### Update Projects
+### Update Content
 
-Edit `src/app/projects/page.jsx`:
+All content lives in **`src/data/timeline.json`**. You never need to touch the page code to add work.
 
-```javascript
-const projects = [
-  {
-    id: 1,
-    title: "Your Project Name",
-    company: "Company Name",
-    period: "Start - End Date",
-    status: "Active", // or "Completed"
-    link: "https://your-link.com",
-    description: "Project description...",
-    highlights: [
-      "Key achievement 1",
-      "Key achievement 2"
-    ],
-    technologies: ["Tech1", "Tech2"],
-    color: "#f9b17a" // Project accent color
-  },
-  // Add more projects...
-];
+- **New role:** add an object to the top of `experience` (newest first).
+- **New project or task:** add to that role's `projects` array, or add a line to a project's `tasks`.
+- **Side project:** add to `sideProjects` with a `repo` link; the section appears automatically once it has entries.
+- **Course:** add to `learning`. Use `"status": "in progress"` for an In progress badge.
+- **Dates:** `"YYYY-MM"` or `"YYYY"`. Use `"end": null` for a current role (shows "Present").
+
+```json
+{
+  "name": "Project name",
+  "tasks": ["Verb + what + result"],
+  "stack": ["React", "Node.js"],
+  "link": "https://live-site.com",
+  "repo": "https://github.com/anh-8922/repo"
+}
 ```
 
 ### Change Colors
@@ -176,7 +173,7 @@ text-[#ffffff]  // Text
 border-[#676f9d] // Borders
 ```
 
-See `COLOR_SCHEME.md` for complete color reference.
+See `documents/COLOR-SCHEME.md` for the full colour reference.
 
 ### Modify Animations
 
@@ -254,19 +251,16 @@ docker run -p 3000:3000 anh-portfolio:prod
 # Lint code
 npm run lint
 
-# Type check (if using TypeScript)
-npm run type-check
 ```
 
 ---
 
 ## 📝 Documentation
 
-- `COLOR_SCHEME.md` - Complete color palette reference
-- `HOMEPAGE_BACKGROUND_DESIGN.md` - Homepage background details
-- `DOCKER_SETUP_GUIDE.md` - Comprehensive Docker guide
-- `PROJECT_STRUCTURE.md` - File organization guide
-- `TROUBLESHOOTING.md` - Common issues and solutions
+- `documents/COLOR-SCHEME.md` - Colour palette reference
+- `documents/DOCKER_SETUP_GUIDE.md` - Docker guide
+- `documents/PROJECT_STRUCTURE.md` - File organisation
+- `documents/QUICK_START.md` - Quick start
 
 ---
 
@@ -284,7 +278,7 @@ This is a personal portfolio project, but feel free to:
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+All rights reserved. Content and code © Anh Chau.
 
 ---
 
@@ -318,6 +312,10 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 🔄 Updates
 
 ### Latest Changes
+- ✅ Rebuilt /projects as a data-driven experience timeline (`src/data/timeline.json`)
+- ✅ Added Training and Side projects sections, GitHub links
+- ✅ Fixed muted-text contrast, added reduced-motion support
+- ✅ Fixed Dockerfile (`npm Install` typo, missing `public/`), added `.dockerignore`
 - ✅ Implemented exact Yana Gladkaya color scheme
 - ✅ Added Raleway font family
 - ✅ Created sophisticated homepage background
@@ -341,6 +339,6 @@ If you have questions or need help:
 
 **Built with ❤️ using Next.js and Docker**
 
-**Live Demo:** [Your deployment URL]
+**Live:** [chauanh.netlify.app](https://chauanh.netlify.app)
 
-**Last Updated:** January 2026
+**Last Updated:** October 2026

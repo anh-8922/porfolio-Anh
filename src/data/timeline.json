@@ -1,0 +1,126 @@
+{
+  "experience": [
+    {
+      "company": "Broadchart International t/a I Like Music",
+      "role": "Contract Full-Stack Developer",
+      "start": "2025-10",
+      "end": "2026-09",
+      "summary": "Music catalogue delivery platform serving broadcast, entertainment and education.",
+      "projects": [
+        {
+          "name": "Partner self-onboarding portal",
+          "tasks": [
+            "Developed the frontend with React, TypeScript and Node.js, including a multi-step account, user and licence flow",
+            "Contributed to a Keycloak-secured Backend-for-Frontend (BFF) layer for the Partner API"
+          ],
+          "stack": ["React", "TypeScript", "Node.js", "Keycloak"]
+        },
+        {
+          "name": "Ingestion & delivery pipeline",
+          "tasks": [
+            "Built AWS Lambda consumers (SQS) for asset ingestion and delivery, covering queue processing, status tracking and data hydration",
+            "Handled music catalogue ingestion on Azure and maintained the legacy PHP/MySQL ingester services during the platform migration",
+            "Monitored the VPN connection to ingestion servers, diagnosing and restoring dropped connections and reporting incidents"
+          ],
+          "stack": ["AWS Lambda", "SQS", "DynamoDB", "Azure", "PHP", "MySQL", "PowerShell", "Bash"]
+        },
+        {
+          "name": "Platform relaunch website",
+          "tasks": [
+            "Built B2B marketing pages with API-driven content",
+            "Extended the WordPress CMS with custom templates"
+          ],
+          "stack": ["WordPress", "PHP", "JavaScript"]
+        },
+        {
+          "name": "Data & quality tooling",
+          "tasks": [
+            "Built Python catalogue validation tools and produced usage reports with Python and SQL",
+            "Maintained code quality with PHPUnit and Cypress tests; worked with Docker, Git workflows and CI/CD pipelines"
+          ],
+          "stack": ["Python", "SQL", "PHPUnit", "Cypress", "Docker", "CI/CD"]
+        }
+      ],
+      "link": "https://web.ilikemusic.com"
+    },
+    {
+      "company": "Learning on Screen (BUFVC)",
+      "role": "Web Developer",
+      "start": "2023-11",
+      "end": "2025-08",
+      "summary": "On-demand TV and radio archive and broadcast data collections for UK higher education.",
+      "projects": [
+        {
+          "name": "Box of Broadcasts (BoB) & TRILT",
+          "tasks": [
+            "Built and maintained features for a service used by 1M+ academic users",
+            "Delivered UX improvements to playlists and search"
+          ],
+          "stack": ["PHP", "JavaScript", "SCSS", "MySQL"],
+          "link": "https://learningonscreen.ac.uk/ondemand"
+        },
+        {
+          "name": "Collections migration",
+          "tasks": [
+            "Migrated TRILT, Channel 4 Press Packs, Independent Radio and News on Screen with 99% data integrity",
+            "Rebuilt search forms, record views and audio players to be responsive and WCAG-compliant",
+            "Built WordPress REST API endpoints serving menus and collection headers as JSON, integrated into the legacy app as a modular header and footer"
+          ],
+          "stack": ["PHP", "MySQL", "WordPress REST API", "JavaScript", "WCAG 2.1"],
+          "link": "https://learningonscreen.ac.uk/collections"
+        },
+        {
+          "name": "WordPress component library",
+          "tasks": [
+            "Developed reusable shortcode components (hero, tiles, cards, accordion, tabs, video player)",
+            "Integrated ACF, MailerLite and Google Tag Manager"
+          ],
+          "stack": ["WordPress", "PHP", "ACF"]
+        },
+        {
+          "name": "Your Local Arena",
+          "tasks": [
+            "Built a microsite for an Arts Council England-funded project featuring the BBC Arena film archive"
+          ],
+          "stack": ["PHP", "JavaScript", "WordPress"],
+          "link": "https://learningonscreen.ac.uk/yourlocalarena"
+        },
+        {
+          "name": "AWS migration support",
+          "tasks": [
+            "Wrote technical documentation and supported QA during the move from an on-premise data centre to AWS",
+            "Worked in a small Agile team using Mercurial, Git (Bitbucket), Docker and VPN"
+          ],
+          "stack": ["AWS", "Docker", "Git", "Mercurial"]
+        }
+      ]
+    },
+    {
+      "company": "Freelance",
+      "role": "Web Developer (self-employed)",
+      "start": "2022-07",
+      "end": "2025-08",
+      "summary": "Marketing websites for small-business clients, including Symba Marketing.",
+      "projects": [
+        {
+          "name": "Small-business websites",
+          "tasks": [
+            "Built and managed sites on WordPress, Wix and GoDaddy from requirements to launch",
+            "Covered SEO, Core Web Vitals performance and accessibility",
+            "Provided post-launch support so clients could update their own content"
+          ],
+          "stack": ["WordPress", "Elementor", "WooCommerce", "Wix Velo", "JavaScript"],
+          "link": "https://symbamarketing.co.uk"
+        }
+      ]
+    }
+  ],
+  "learning": [
+    { "name": "Mid-Level Accelerator", "provider": "Code First Girls", "start": "2026", "end": "2027", "status": "in progress" },
+    { "name": "IBM DevOps and Software Engineering Professional Certificate", "provider": "Coursera", "start": "2025", "end": "2026" },
+    { "name": "CS50's Introduction to Computer Science", "provider": "Harvard", "start": "2024", "end": "2025" },
+    { "name": "Full-Stack Web Application Development", "provider": "WBS Coding School", "start": "2023", "end": "2023" },
+    { "name": "Software Development Level 3 (Skills Bootcamp)", "provider": "QA Academy", "start": "2023", "end": "2023" }
+  ],
+  "sideProjects": []
+}

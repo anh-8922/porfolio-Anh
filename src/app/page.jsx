@@ -1,4 +1,3 @@
-
 'use client';
 export default function Home() {
   return (
@@ -49,7 +48,7 @@ export default function Home() {
             Full-Stack Developer
           </p>
           <p className="text-lg text-[#ffffff]/70 max-w-2xl mx-auto animate-fadeIn" style={{ animationDelay: '0.4s' }}>
-            Building innovative applications that deliver meaningful user experiences
+            React, TypeScript, Node.js and PHP. Web platforms, APIs and data pipelines on AWS.
           </p>
         </div>
         
@@ -59,7 +58,7 @@ export default function Home() {
             className="group px-8 py-4 bg-[#f9b17a] hover:bg-[#ff9d5c] rounded-xl text-[#2d3250] font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#f9b17a]/30 hover:-translate-y-1"
           >
             <span className="flex items-center gap-2">
-              View Projects
+              View Experience
               <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -73,7 +72,7 @@ export default function Home() {
           </a>
         </div>
         
-        <div className="flex gap-6 justify-center text-[#ffffff]/60 animate-fadeIn" style={{ animationDelay: '0.8s' }}>
+        <div className="flex gap-x-6 gap-y-2 justify-center flex-wrap text-[#ffffff]/75 animate-fadeIn" style={{ animationDelay: '0.8s' }}>
           <a 
             href="https://linkedin.com/in/anh-kim-chau" 
             target="_blank" 
@@ -83,7 +82,7 @@ export default function Home() {
             <span>LinkedIn</span>
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#f9b17a] group-hover:w-full transition-all duration-300"></span>
           </a>
-          <span>•</span>
+          <span aria-hidden="true">•</span>
           <a 
             href="mailto:anhchau8922@gmail.com"
             className="hover:text-[#f9b17a] transition-colors relative group"
@@ -91,7 +90,17 @@ export default function Home() {
             <span>Email</span>
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#f9b17a] group-hover:w-full transition-all duration-300"></span>
           </a>
-          <span>•</span>
+          <span aria-hidden="true">•</span>
+          <a 
+            href="https://github.com/anh-8922" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:text-[#f9b17a] transition-colors relative group"
+          >
+            <span>GitHub</span>
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#f9b17a] group-hover:w-full transition-all duration-300"></span>
+          </a>
+          <span aria-hidden="true">•</span>
           <span>Greater London</span>
         </div>
       </div>
@@ -124,6 +133,14 @@ export default function Home() {
 
         .animate-float {
           animation: float 6s ease-in-out infinite;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .animate-fadeIn,
+          .animate-float {
+            animation: none;
+            opacity: 1;
+          }
         }
       `}</style>
     </main>
