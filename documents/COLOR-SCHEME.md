@@ -5,7 +5,8 @@ A light page with one indigo hero, built on the original brand colours: indigo `
 | Token | Hex | Usage |
 |---|---|---|
 | `--page` | `#efede8` | Background behind the frame |
-| `--paper` | `#ffffff` | Side rail and sections |
+| `--paper` | `#ffffff` | Sections |
+| `--rail-bg` | `#f6f3ee` | Menu rail (with a `--line` divider on its right) |
 | `--ink` | `#1d1f2e` | Main text |
 | `--muted` | `#5a5d70` | Secondary text, labels, dates |
 | `--line` | `#e4e2dc` | Dividers |

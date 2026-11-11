@@ -10,7 +10,7 @@ Portfolio of Anh Chau, web developer. A simple, accessible one-page site built w
 
 ## ✨ Features
 
-- **Less-is-more layout** - white side rail with the menu, an indigo hero with thin peach line artwork and a "Selected work" card, light sections below
+- **Less-is-more layout** - lightly tinted side rail with the menu (the current section is marked with a peach dash), an indigo hero with thin peach line artwork and a "Selected work" card, light sections below
 - **Themeable** - all colours are tokens, so a dark theme can be added later
 - **Case studies, not a CV list** - each project shows who it was for, my role, what I did and the result
 - **Data-driven** - all content lives in two JSON files in `src/data/`
@@ -271,6 +271,7 @@ All rights reserved. Content and code © Anh Chau.
 ### Latest Changes
 - ✅ New hero: indigo panel with original SVG line artwork (thin peach lines and one soft glow) and a "Selected work" card
 - ✅ Light page kept; removed duplicated section labels
+- ✅ Menu rail now has its own tint and divider so it stays readable beside the content
 - ✅ Redesigned as a light, one-page "less is more" layout: side rail, colour-panel hero, case studies
 - ✅ Content split into `work.json` (case studies, skills) and `timeline.json` (experience, training)
 - ✅ `/projects` now redirects to `/#work`; removed the unused `lucide-react` dependency
