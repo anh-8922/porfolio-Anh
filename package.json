@@ -2,7 +2,7 @@
   "name": "anh-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "Portfolio website for Anh Chau - Full-Stack Developer",
+  "description": "Portfolio website for Anh Chau - Web Developer",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -16,8 +16,7 @@
   "dependencies": {
     "next": "^14.2.0",
     "react": "^18.3.0",
-    "react-dom": "^18.3.0",
-    "lucide-react": "^0.344.0"
+    "react-dom": "^18.3.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",

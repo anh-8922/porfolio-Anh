@@ -1,21 +1,31 @@
-import { Raleway } from 'next/font/google'
+import { Barlow, Barlow_Condensed } from 'next/font/google'
 import './globals.css'
 
-const raleway = Raleway({ 
+const display = Barlow_Condensed({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
-  variable: '--font-raleway',
+  weight: ['400', '500', '600'],
+  variable: '--font-display',
+  display: 'swap',
+})
+
+const body = Barlow({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-body',
+  display: 'swap',
 })
 
 export const metadata = {
-  title: 'Anh Chau - Full-Stack Developer',
-  description: 'Portfolio of Anh Chau, Full-Stack Developer specializing in web applications and digital services.',
+  title: 'Anh Chau · Web Developer',
+  description:
+    'Anh Chau, web developer in Greater London. Accessible WordPress and React websites for membership organisations, B2B platforms and small businesses.',
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={raleway.variable}>
-      <body className={raleway.className}>{children}</body>
+    <html lang="en-GB" className={`${display.variable} ${body.variable}`}>
+      <body>{children}</body>
     </html>
   )
 }

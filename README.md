@@ -1,6 +1,6 @@
 # 🎨 Anh Chau - Portfolio
 
-A modern, sophisticated portfolio website showcasing full-stack development projects. Built with Next.js, featuring a dark theme with elegant animations and responsive design.
+Portfolio of Anh Chau, web developer. A simple, accessible one-page site built with Next.js, with case studies of WordPress and front-end work.
 
 ![Portfolio Preview](https://img.shields.io/badge/Next.js-14.2-black?style=flat&logo=next.js)
 ![Docker](https://img.shields.io/badge/Docker-Ready-blue?style=flat&logo=docker)
@@ -10,29 +10,28 @@ A modern, sophisticated portfolio website showcasing full-stack development proj
 
 ## ✨ Features
 
-- 🎨 **Sophisticated Dark Theme** - Based on Yana Gladkaya's design palette
-- 🎭 **Animated Background** - Multi-layered gradient orbs and geometric shapes
-- 📱 **Fully Responsive** - Mobile-first design that works on all devices
-- ⚡ **Next.js 14** - App Router with React Server Components
-- 🗂️ **Data-driven timeline** - all experience, projects and training live in one JSON file
-- 🐳 **Docker Ready** - Complete Docker setup for development and production
-- 🎯 **SEO Optimized** - Meta tags and semantic HTML
-- ♿ **Accessible** - WCAG AA text contrast, semantic landmarks, reduced-motion support
-- 🎬 **Smooth Animations** - CSS animations and transitions
+- **Less-is-more layout** - white side rail with the menu, one full-height colour panel as the hero, quiet white sections below
+- **Case studies, not a CV list** - each project shows who it was for, my role, what I did and the result
+- **Data-driven** - all content lives in two JSON files in `src/data/`
+- **Accessible** - skip link, semantic landmarks and heading order, visible keyboard focus, AA text contrast, reduced-motion support
+- **Responsive** - the side rail becomes a scrollable top menu on small screens
+- **Next.js 14** - App Router, statically prerendered; Docker setup for development and production
 
 ---
 
-## 🎨 Color Palette
+## 🎨 Colour palette
 
-| Color | Hex | Usage |
+| Colour | Hex | Usage |
 |-------|-----|-------|
-| White | `#ffffff` | Primary text |
-| Blue-Gray | `#676f9d` | Secondary text, borders |
-| Medium Blue | `#424769` | Main background |
-| Dark Navy | `#2d3250` | Cards, header |
-| Peach | `#f9b17a` | CTAs, accents |
+| Indigo | `#424769` | Hero panel |
+| Dark navy | `#2d3250` | Hero lower band |
+| Peach | `#f9b17a` | Accent shapes, link underlines, list markers |
+| Sand | `#e8dfd1` | Hero shape, card tiles |
+| Ink | `#1d1f2e` | Main text |
+| Muted | `#5a5d70` | Secondary text |
+| Paper / page | `#ffffff` / `#efede8` | Page frame and background |
 
-**Font:** Raleway (400, 600, 700)
+**Fonts:** Barlow Condensed (headings, menu, labels) and Barlow (body text), loaded with `next/font/google`.
 
 ---
 
@@ -66,23 +65,20 @@ Visit: **http://localhost:3000**
 ```
 anh-portfolio/
 ├── src/
-│   └── app/
-│       ├── projects/
-│       │   └── page.jsx          # Experience timeline page
-│       ├── layout.jsx             # Root layout with Raleway font
-│       ├── page.jsx               # Home/landing page
-│       └── globals.css            # Global styles & Tailwind
-│   ├── components/Timeline.jsx    # Timeline + project blocks
-│   ├── data/timeline.json         # ← ALL CONTENT LIVES HERE
-│   └── lib/format.js              # Date formatting
-├── public/                        # Static assets
-├── Dockerfile                     # Production Docker config
-├── Dockerfile.dev                 # Development Docker config
-├── docker-compose.yml             # Docker orchestration
-├── next.config.js                 # Next.js configuration
-├── tailwind.config.js             # Tailwind CSS config
-├── package.json                   # Dependencies
-└── README.md                      # This file
+│   ├── app/
+│   │   ├── layout.jsx        # Fonts and page metadata
+│   │   ├── page.jsx          # The one-page site: hero, about, work, experience, skills, training, contact
+│   │   └── globals.css       # All site styles (colour tokens at the top)
+│   ├── components/
+│   │   ├── Rail.jsx          # Side rail / top menu, highlights the section in view
+│   │   ├── Hero.jsx          # Colour panel, name and "Selected work" card
+│   │   └── CaseStudy.jsx     # One case study
+│   ├── data/
+│   │   ├── work.json         # ← Site details, about text, case studies, skills
+│   │   └── timeline.json     # ← Experience and training
+│   └── lib/format.js         # Date formatting
+├── next.config.js            # Includes the /projects → /#work redirect
+└── ...
 ```
 
 ---
@@ -128,64 +124,22 @@ npm start
 
 ## 📄 Pages
 
-### Home Page (`/`)
-- Hero section with animated background
-- Call-to-action buttons
-- Contact links
-- Sophisticated gradient orbs and geometric shapes
-
-### Experience Page (`/projects`)
-- Timeline of roles, newest first, each with projects, tasks and stack tags
-- Side projects (shown when `sideProjects` has entries)
-- Training section
+- **`/`** - the whole portfolio on one page.
+- **`/projects`** - permanently redirects to `/#work`, so old links still work.
 
 ---
 
-## 🎨 Customization
+## 🎨 Customisation
 
-### Update Content
+### Update content
 
-All content lives in **`src/data/timeline.json`**. You never need to touch the page code to add work.
+- **Case studies, skills, about text, contact links:** `src/data/work.json`. Each case study has `org`, `years`, `title`, `summary`, `facts`, `points` and an optional `link`.
+- **Experience and training:** `src/data/timeline.json` (newest first). Experience rows show `role`, `company` and `summary`; training rows show `name`, `provider` and dates, with `"status": "in progress"` for a badge.
+- **Dates:** `"YYYY-MM"` or `"YYYY"`; `"end": null` shows "Present".
 
-- **New role:** add an object to the top of `experience` (newest first).
-- **New project or task:** add to that role's `projects` array, or add a line to a project's `tasks`.
-- **Side project:** add to `sideProjects` with a `repo` link; the section appears automatically once it has entries.
-- **Course:** add to `learning`. Use `"status": "in progress"` for an In progress badge.
-- **Dates:** `"YYYY-MM"` or `"YYYY"`. Use `"end": null` for a current role (shows "Present").
+### Change colours or fonts
 
-```json
-{
-  "name": "Project name",
-  "tasks": ["Verb + what + result"],
-  "stack": ["React", "Node.js"],
-  "link": "https://live-site.com",
-  "repo": "https://github.com/anh-8922/repo"
-}
-```
-
-### Change Colors
-
-Colors are defined using Tailwind's arbitrary values:
-
-```jsx
-bg-[#424769]    // Background
-text-[#ffffff]  // Text
-border-[#676f9d] // Borders
-```
-
-See `documents/COLOR-SCHEME.md` for the full colour reference.
-
-### Modify Animations
-
-Adjust animation timing in the styled-jsx blocks or Tailwind classes:
-
-```jsx
-// Duration
-transition-all duration-300
-
-// Animation delay
-style={{ animationDelay: '0.2s' }}
-```
+Colour tokens are at the top of `src/app/globals.css`. Fonts are set in `src/app/layout.jsx`.
 
 ---
 
@@ -206,8 +160,7 @@ style={{ animationDelay: '0.2s' }}
 
 - **Framework:** Next.js 14.2 (App Router)
 - **Styling:** Tailwind CSS 3.4
-- **Icons:** Lucide React
-- **Font:** Google Fonts (Raleway)
+- **Fonts:** Barlow Condensed and Barlow (Google Fonts via `next/font`)
 - **Container:** Docker & Docker Compose
 - **Package Manager:** npm
 
@@ -293,9 +246,8 @@ All rights reserved. Content and code © Anh Chau.
 
 ## 🙏 Acknowledgments
 
-- Design inspiration: Yana Gladkaya's travel agency registration form
-- Color palette: #ffffff, #676f9d, #424769, #2d3250, #f9b17a
-- Typography: Raleway font family
+- Layout inspired by minimal photographer portfolios with a side menu and full-bleed hero
+- Original colour palette: #424769, #2d3250, #f9b17a
 
 ---
 
@@ -312,6 +264,10 @@ All rights reserved. Content and code © Anh Chau.
 ## 🔄 Updates
 
 ### Latest Changes
+- ✅ Redesigned as a light, one-page "less is more" layout: side rail, colour-panel hero, case studies
+- ✅ Content split into `work.json` (case studies, skills) and `timeline.json` (experience, training)
+- ✅ `/projects` now redirects to `/#work`; removed the unused `lucide-react` dependency
+- ✅ Switched fonts from Raleway to Barlow Condensed and Barlow
 - ✅ Rebuilt /projects as a data-driven experience timeline (`src/data/timeline.json`)
 - ✅ Added Training and Side projects sections, GitHub links
 - ✅ Fixed muted-text contrast, added reduced-motion support
@@ -341,4 +297,4 @@ If you have questions or need help:
 
 **Live:** [chauanh.netlify.app](https://chauanh.netlify.app)
 
-**Last Updated:** October 2026
+**Last Updated:** November 2026
