@@ -10,7 +10,8 @@ Portfolio of Anh Chau, web developer. A simple, accessible one-page site built w
 
 ## ✨ Features
 
-- **Less-is-more layout** - white side rail with the menu, one full-height colour panel as the hero, quiet white sections below
+- **Less-is-more layout** - white side rail with the menu, an indigo hero with thin peach line artwork and a "Selected work" card, light sections below
+- **Themeable** - all colours are tokens, so a dark theme can be added later
 - **Case studies, not a CV list** - each project shows who it was for, my role, what I did and the result
 - **Data-driven** - all content lives in two JSON files in `src/data/`
 - **Accessible** - skip link, semantic landmarks and heading order, visible keyboard focus, AA text contrast, reduced-motion support
@@ -71,7 +72,7 @@ anh-portfolio/
 │   │   └── globals.css       # All site styles (colour tokens at the top)
 │   ├── components/
 │   │   ├── Rail.jsx          # Side rail / top menu, highlights the section in view
-│   │   ├── Hero.jsx          # Colour panel, name and "Selected work" card
+│   │   ├── Hero.jsx          # Indigo panel, SVG line artwork, name and "Selected work" card
 │   │   └── CaseStudy.jsx     # One case study
 │   ├── data/
 │   │   ├── work.json         # ← Site details, about text, case studies, skills
@@ -139,7 +140,11 @@ npm start
 
 ### Change colours or fonts
 
-Colour tokens are at the top of `src/app/globals.css`. Fonts are set in `src/app/layout.jsx`.
+All colours are tokens at the top of `src/app/globals.css` (the hero artwork uses the `--art-*` tokens). Fonts are set in `src/app/layout.jsx`.
+
+### Adding a dark theme later
+
+The site uses one light theme for now. To add a dark theme, redefine the tokens under a `[data-theme="dark"]` / `prefers-color-scheme: dark` block and add a toggle that sets `data-theme` on `<html>`.
 
 ---
 
@@ -264,6 +269,8 @@ All rights reserved. Content and code © Anh Chau.
 ## 🔄 Updates
 
 ### Latest Changes
+- ✅ New hero: indigo panel with original SVG line artwork (thin peach lines and one soft glow) and a "Selected work" card
+- ✅ Light page kept; removed duplicated section labels
 - ✅ Redesigned as a light, one-page "less is more" layout: side rail, colour-panel hero, case studies
 - ✅ Content split into `work.json` (case studies, skills) and `timeline.json` (experience, training)
 - ✅ `/projects` now redirects to `/#work`; removed the unused `lucide-react` dependency

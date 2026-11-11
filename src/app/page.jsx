@@ -20,6 +20,7 @@ export default function Home() {
         <main id="content">
           <Hero
             name={site.name}
+            role={site.role}
             tagline={site.tagline}
             featured={`Collections · ${caseStudies[0]?.org ?? ''}`}
           />
@@ -31,7 +32,6 @@ export default function Home() {
           </section>
 
           <section id="work" aria-labelledby="work-h">
-            <p className="label">Selected work</p>
             <h2 id="work-h">Work</h2>
             {caseStudies.map((study) => (
               <CaseStudy key={study.title} study={study} />
@@ -39,7 +39,6 @@ export default function Home() {
           </section>
 
           <section id="experience" aria-labelledby="exp-h">
-            <p className="label">Experience</p>
             <h2 id="exp-h">Experience</h2>
             <ul className="rows">
               {experience.map((job) => (
@@ -55,7 +54,6 @@ export default function Home() {
           </section>
 
           <section id="skills" aria-labelledby="skills-h">
-            <p className="label">Skills</p>
             <h2 id="skills-h">Skills</h2>
             <div className="skills">
               {skills.map((group) => (
@@ -68,7 +66,6 @@ export default function Home() {
           </section>
 
           <section id="training" aria-labelledby="training-h">
-            <p className="label">Training</p>
             <h2 id="training-h">Training</h2>
             <ul className="rows">
               {learning.map((course) => (
@@ -84,7 +81,6 @@ export default function Home() {
           </section>
 
           <section id="contact" className="contact" aria-labelledby="contact-h">
-            <p className="label">Contact</p>
             <h2 id="contact-h">Get in touch</h2>
             <p className="mail">{site.email}</p>
             <div className="links">

@@ -1,27 +1,47 @@
-// Full-height colour panel: name, tagline and a card linking to selected work.
-export default function Hero({ name, tagline, featured }) {
+// Hero: name and tagline on a navy panel with thin peach line artwork, plus a card that leads to the work.
+// The artwork is drawn in SVG; its colours come from the --art-* tokens in globals.css.
+function HeroLines() {
+  return (
+    <svg className="hero-lines" viewBox="0 0 1200 900" preserveAspectRatio="xMaxYMin slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="hero-art-bg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" style={{ stopColor: 'var(--art-bg-1)' }} />
+          <stop offset="1" style={{ stopColor: 'var(--art-bg-2)' }} />
+        </linearGradient>
+        <radialGradient id="hero-art-glow" cx="1200" cy="0" r="620" gradientUnits="userSpaceOnUse">
+          <stop offset="0" style={{ stopColor: 'var(--art-glow)', stopOpacity: 'var(--art-glow-strength)' }} />
+          <stop offset="0.45" style={{ stopColor: 'var(--art-glow)', stopOpacity: 'var(--art-glow-mid)' }} />
+          <stop offset="1" style={{ stopColor: 'var(--art-glow)', stopOpacity: 0 }} />
+        </radialGradient>
+        <linearGradient id="hero-art-ray" gradientUnits="userSpaceOnUse" x1="1200" y1="0" x2="500" y2="900">
+          <stop offset="0" style={{ stopColor: 'var(--art-line)', stopOpacity: 0.9 }} />
+          <stop offset="1" style={{ stopColor: 'var(--art-line)', stopOpacity: 0 }} />
+        </linearGradient>
+      </defs>
+      <rect width="1200" height="900" fill="url(#hero-art-bg)" />
+      <rect width="1200" height="900" fill="url(#hero-art-glow)" />
+      <g fill="none" strokeWidth="1.2">
+        <circle cx="930" cy="560" r="300" style={{ stroke: 'var(--art-line)', strokeOpacity: 'var(--art-line-strength)' }} />
+        <line x1="0" y1="640" x2="1200" y2="640" style={{ stroke: 'var(--art-horizon)', strokeOpacity: 'var(--art-horizon-strength)' }} />
+        <path d="M1200 0 L560 900 M1200 0 L820 900 M1200 0 L1060 900" stroke="url(#hero-art-ray)" />
+      </g>
+    </svg>
+  );
+}
+
+export default function Hero({ name, role, tagline, featured }) {
   const [first, ...rest] = name.split(' ');
 
   return (
     <div className="hero" id="top">
-      <div className="plane sand" aria-hidden="true" />
-      <div className="plane peach" aria-hidden="true" />
-      <div className="plane deep" aria-hidden="true" />
-      <svg className="lines" viewBox="0 0 1000 800" preserveAspectRatio="none" aria-hidden="true">
-        <g fill="none" stroke="#fff" strokeOpacity=".55" strokeWidth="3">
-          <path d="M260 0 L80 800" />
-          <path d="M300 464 L1000 464" />
-          <path d="M760 0 L1000 300" />
-        </g>
-      </svg>
-
-      <div className="hero-text">
-        <h1>
-          <span className="first">{first}</span>
-          <span className="last">{rest.join(' ')}</span>
-        </h1>
-        <p>{tagline}</p>
-      </div>
+      <HeroLines />
+      <h1>
+        <span className="first">{first}</span>
+        <span className="last">{rest.join(' ')}</span>
+      </h1>
+      <p>
+        <strong>{role}.</strong> {tagline}
+      </p>
 
       <a className="card" href="#work" aria-label="See selected work">
         <div className="shot" aria-hidden="true">
@@ -33,7 +53,6 @@ export default function Hero({ name, tagline, featured }) {
         </div>
         <div className="tab"><span>Selected work</span></div>
       </a>
-      <span className="work-word" aria-hidden="true">Work</span>
     </div>
   );
 }

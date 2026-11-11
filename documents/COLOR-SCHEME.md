@@ -1,28 +1,29 @@
 # Colour scheme
 
-The site keeps the original indigo and peach brand colours on a light, minimal layout. All colours are CSS custom properties at the top of `src/app/globals.css`.
+A light page with one indigo hero, built on the original brand colours: indigo `#424769`, navy `#2d3250` and peach `#f9b17a`. All colours are CSS custom properties at the top of `src/app/globals.css`.
 
 | Token | Hex | Usage |
 |---|---|---|
-| `--indigo` | `#424769` | Hero panel |
-| `--indigo-deep` | `#2d3250` | Hero lower band |
-| `--peach` | `#f9b17a` | Accent shapes, link underlines, list markers |
-| `--sand` | `#e8dfd1` | Hero shape, card tiles |
-| `--ink` | `#1d1f2e` | Main text |
-| `--muted` | `#5a5d70` | Secondary text (about 6:1 on white) |
-| `--line` | `#e4e2dc` | Dividers |
-| `--paper` | `#ffffff` | Page frame |
 | `--page` | `#efede8` | Background behind the frame |
+| `--paper` | `#ffffff` | Side rail and sections |
+| `--ink` | `#1d1f2e` | Main text |
+| `--muted` | `#5a5d70` | Secondary text, labels, dates |
+| `--line` | `#e4e2dc` | Dividers |
+| `--peach` | `#f9b17a` | Accent: link underlines, list markers, focus outline, hero lines |
+| `--art-bg-1` → `--art-bg-2` | `#4a4f75` → `#2d3250` | Hero gradient |
+| `--art-glow` | `#f9b17a` at 45% | Soft glow, top-right of the hero |
+| `--art-line` | `#f9b17a` at 35% | Hero circle outline and rays |
+| `--hero-first` / `--hero-last` | `#ffffff` | Name |
+| `--hero-text` | `#d4d6e6` | Tagline |
+| `--card` / `--card-shot` | `#ffffff` / `#f6f4ef` | "Selected work" card |
 
 ## Typography
 
-- **Barlow Condensed** (400, 500, 600): name, headings, menu, labels. Usually uppercase with letter-spacing.
+- **Barlow Condensed** (400, 500, 600): name, headings, menu, labels.
 - **Barlow** (400, 500, 600): body text.
-
-Both load through `next/font/google` in `src/app/layout.jsx`. The CSS falls back to the font names directly if the variables are missing.
 
 ## Accessibility
 
-- Body text is ink or muted on white; hero text is white on indigo.
-- Peach is used for shapes and underlines, never for small text on white.
-- Focus outlines are 3px peach with an offset.
+- Body text is ink or muted grey on white; hero text is white or pale grey on indigo. Both pass WCAG AA.
+- Peach is used for lines, shapes and underlines, never for small text on white.
+- The hero artwork is decorative SVG, hidden from screen readers.

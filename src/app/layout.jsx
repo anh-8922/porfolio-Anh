@@ -22,6 +22,11 @@ export const metadata = {
     'Anh Chau, web developer in Greater London. Accessible WordPress and React websites for membership organisations, B2B platforms and small businesses.',
 }
 
+export const viewport = {
+  colorScheme: 'light',
+  themeColor: '#2d3250',
+}
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en-GB" className={`${display.variable} ${body.variable}`}>
