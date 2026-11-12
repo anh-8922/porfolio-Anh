@@ -1,7 +1,7 @@
 {
   "experience": [
     {
-      "company": "Broadchart International t/a I Like Music",
+      "company": "Broadchart International Ltd t/a I Like Music",
       "role": "Contract Full-Stack Developer",
       "start": "2025-10",
       "end": "2026-09",
@@ -44,7 +44,7 @@
       "link": "https://web.ilikemusic.com"
     },
     {
-      "company": "Learning on Screen (BUFVC)",
+      "company": "Learning on Screen – The British Universities and Colleges Film and Video Council",
       "role": "Web Developer",
       "start": "2023-11",
       "end": "2025-08",
@@ -97,7 +97,7 @@
     },
     {
       "company": "Freelance",
-      "role": "Web Developer (self-employed)",
+      "role": "Web Developer",
       "start": "2022-07",
       "end": "2025-08",
       "summary": "Marketing websites for small-business clients, including Symba Marketing.",

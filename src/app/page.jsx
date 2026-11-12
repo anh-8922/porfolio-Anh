@@ -60,7 +60,7 @@ export default function Home() {
                 <li key={`${job.company}-${job.start}`}>
                   <span className="when">{formatRange(job.start, job.end)}</span>
                   <span className="what">
-                    <strong>{job.role}</strong>, {job.company.split(' t/a ').pop()}
+                    <strong>{job.role}</strong>, {job.company}
                     {job.summary && <span>{job.summary}</span>}
                   </span>
                 </li>
@@ -106,7 +106,7 @@ export default function Home() {
           </section>
 
           <footer className="site-footer">
-            © {new Date().getFullYear()} {site.name} · {site.location} · Built with Next.js, semantic HTML and CSS.
+            © {new Date().getFullYear()} {site.name} · Built with Next.js, semantic HTML and CSS.
           </footer>
         </main>
       </div>

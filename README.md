@@ -139,7 +139,7 @@ npm start
 ### Update content
 
 - **Work stories and screenshots:** `src/data/journey.json`. Screenshots live in `public/work/` (WebP, about 100KB each). Any `"todo"` field is a reminder: it shows highlighted in `npm run dev`, is hidden on the live site, and can be shown in a review build with `NEXT_PUBLIC_SHOW_TODOS=1 npm run build`.
-- **Skills, about text, contact links:** `src/data/work.json`. `site.heroName` sets the two lines of the big name in the hero (currently "Chau" above a larger "Anh"). Each case study has `org`, `years`, `title`, `summary`, `facts`, `points` and an optional `link`.
+- **Skills, about text, contact links:** `src/data/work.json`. `site.heroName` sets the big name in the hero: `{ "single": "Anh Chau" }` for one line (current), or `{ "top": "Chau", "bottom": "Anh" }` for a small line over a large one. Each case study has `org`, `years`, `title`, `summary`, `facts`, `points` and an optional `link`.
 - **Experience and training:** `src/data/timeline.json` (newest first). Experience rows show `role`, `company` and `summary`; training rows show `name`, `provider` and dates, with `"status": "in progress"` for a badge.
 - **Dates:** `"YYYY-MM"` or `"YYYY"`; `"end": null` shows "Present".
 

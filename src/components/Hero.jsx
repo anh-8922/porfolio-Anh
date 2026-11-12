@@ -29,14 +29,21 @@ function HeroLines() {
   );
 }
 
-// heroName sets the two lines of the big name: a smaller top line and a large bottom line.
+// heroName sets the big name: either { single } for one line at one size,
+// or { top, bottom } for a smaller top line over a large bottom line.
 export default function Hero({ heroName, role, tagline, featured, cardHref = '#work' }) {
   return (
     <div className="hero" id="top">
       <HeroLines />
       <h1>
-        <span className="first">{heroName.top}</span>
-        <span className="last">{heroName.bottom}</span>
+        {heroName.single ? (
+          <span className="single">{heroName.single}</span>
+        ) : (
+          <>
+            <span className="first">{heroName.top}</span>
+            <span className="last">{heroName.bottom}</span>
+          </>
+        )}
       </h1>
       <p>
         <strong>{role}.</strong> {tagline}

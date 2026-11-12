@@ -82,7 +82,7 @@ export default function WorkPage() {
           </section>
 
           <footer className="site-footer">
-            © {new Date().getFullYear()} {site.name} · {site.location} · <a href="/">Back to home</a>
+            © {new Date().getFullYear()} {site.name} · <a href="/">Back to home</a>
           </footer>
         </main>
       </div>

@@ -41,7 +41,7 @@ a{color:inherit}
 
 /* ---------- Rail ---------- */
 .rail{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;justify-content:space-between;padding:40px 36px;background:var(--rail-bg);border-right:1px solid var(--line)}
-.brand{font:600 15px/1.2 var(--display);letter-spacing:.14em;text-transform:uppercase;text-decoration:none}
+.brand{font:600 22px/1.1 var(--display);letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
 .nav ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
 .nav a{position:relative;display:inline-block;font:400 19px/1 var(--display);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--ink);transition:padding .15s}
 .nav a:hover{color:var(--indigo)}
@@ -59,6 +59,8 @@ a{color:inherit}
 .hero h1{margin:0;font-weight:500;text-transform:uppercase}
 .hero .first{display:block;font:500 clamp(56px,7.5vw,112px)/.8 var(--display);letter-spacing:.04em}
 .hero .last{display:block;font:500 clamp(104px,15vw,224px)/.8 var(--display);letter-spacing:.03em;color:var(--hero-last)}
+/* Name on one line, one size */
+.hero .single{display:block;font:500 clamp(64px,10vw,150px)/.9 var(--display);letter-spacing:.03em;white-space:nowrap;color:var(--hero-first)}
 .hero p{margin:clamp(32px,6vh,56px) 0 0;max-width:24ch;font-size:clamp(22px,2.2vw,28px);line-height:1.35;color:var(--hero-text)}
 .hero p strong{font-weight:500;color:var(--hero-strong)}
 
@@ -181,7 +183,7 @@ dialog.viewer img{display:block;width:100%;height:auto}
 @media (max-width:860px){
   .frame{grid-template-columns:minmax(0,1fr);margin:0;border-radius:0}
   .rail{min-width:0;position:sticky;height:auto;flex-direction:row;align-items:center;gap:16px;padding:12px 16px;background:var(--rail-bg);border-right:0;z-index:5;border-bottom:1px solid var(--line)}
-  .brand{white-space:nowrap}
+  .brand{white-space:nowrap;font-size:18px;letter-spacing:.08em}
   .nav{overflow-x:auto;min-width:0;flex:1}
   .nav ul{display:flex;gap:18px}
   .nav a{font-size:16px;white-space:nowrap}

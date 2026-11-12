@@ -2,8 +2,7 @@
   "site": {
     "name": "Anh Chau",
     "heroName": {
-      "top": "Chau",
-      "bottom": "Anh"
+      "single": "Anh Chau"
     },
     "title": "Web Developer",
     "role": "Web developer",
@@ -15,7 +14,7 @@
   },
   "about": {
     "lead": "I build and look after websites that people can actually use.",
-    "body": "Three years of WordPress and front-end work across a membership charity, a B2B music platform and small-business clients. I care about plain content, consistent navigation and WCAG-compliant pages, and I'm comfortable working between content owners, agencies and developers. Based in Greater London."
+    "body": "Experience in WordPress and front-end work across a membership charity, a B2B music platform and small-business clients. I care about plain content, consistent navigation and WCAG-compliant pages, and I'm comfortable working between content owners, agencies and developers. Based in Greater London."
   },
   "skills": [
     {
