@@ -1,6 +1,10 @@
 {
   "site": {
     "name": "Anh Chau",
+    "heroName": {
+      "top": "Chau",
+      "bottom": "Anh"
+    },
     "title": "Web Developer",
     "role": "Web developer",
     "tagline": "Clear, accessible WordPress and React websites for the people who use them.",
@@ -13,87 +17,22 @@
     "lead": "I build and look after websites that people can actually use.",
     "body": "Three years of WordPress and front-end work across a membership charity, a B2B music platform and small-business clients. I care about plain content, consistent navigation and WCAG-compliant pages, and I'm comfortable working between content owners, agencies and developers. Based in Greater London."
   },
-  "caseStudies": [
-    {
-      "org": "Learning on Screen",
-      "years": "2023 – 2025",
-      "title": "Broadcast collections platform",
-      "summary": "Researchers and students at UK universities needed to find specific TV and radio programmes quickly and trust what they found. I moved the collections onto a new platform and rebuilt the pages they search and browse.",
-      "facts": [
-        { "label": "Role", "value": "Web Developer" },
-        { "label": "Result", "value": "16 collections, 99% data integrity" }
-      ],
-      "points": [
-        "Migrated collections including TRILT, Channel 4 Press Packs, Independent Radio and News on Screen.",
-        "Rebuilt search forms, record views and audio players to be responsive and WCAG-compliant.",
-        "Built WordPress REST API endpoints so the legacy app could share the main site's header, footer and menus."
-      ],
-      "link": {
-        "href": "https://web.archive.org/web/20250713114330/https://learningonscreen.ac.uk/resources/collections/",
-        "label": "Archived copy, July 2025"
-      }
-    },
-    {
-      "org": "Learning on Screen",
-      "years": "2023 – 2025",
-      "title": "WordPress components and website redesign",
-      "summary": "A membership charity's main website, used by higher-education members and the public. When an external agency rebuilt it, I worked between the agency, our content team and our tech lead.",
-      "facts": [
-        { "label": "Role", "value": "Web Developer" },
-        { "label": "Worked with", "value": "Marketing, membership services, agency" }
-      ],
-      "points": [
-        "Built reusable components editors could drop into pages: hero, tiles, cards, accordion, tabs and video player.",
-        "Integrated Advanced Custom Fields, MailerLite sign-ups, Google Tag Manager and cookie consent.",
-        "Built the Your Local Arena microsite for an Arts Council England-funded project featuring the BBC Arena film archive."
-      ],
-      "link": {
-        "href": "https://learningonscreen.ac.uk/",
-        "label": "Visit Learning on Screen"
-      }
-    },
-    {
-      "org": "I Like Music",
-      "years": "2025 – 2026",
-      "title": "B2B marketing website",
-      "summary": "A music catalogue platform serving broadcast, entertainment and education. I managed and extended the live WordPress marketing site, then built the new site for the platform relaunch.",
-      "facts": [
-        { "label": "Role", "value": "Contract Full-Stack Developer" },
-        { "label": "Worked with", "value": "Client services, DevOps" }
-      ],
-      "points": [
-        "Extended the site with custom templates and fields (Elementor, Gravity Forms, ACF), enquiry forms to email and LinkedIn tracking.",
-        "Restored the live site within an hour after a plugin update needed a newer PHP version, working with our DevOps engineer.",
-        "Designed and built the relaunch site from requirements agreed with client services. It has not launched yet, so it is described here rather than shown."
-      ],
-      "link": {
-        "href": "https://web.ilikemusic.com/",
-        "label": "Visit I Like Music"
-      }
-    },
-    {
-      "org": "Freelance",
-      "years": "2022 – 2025",
-      "title": "Small-business websites",
-      "summary": "Marketing websites for small-business clients, including Symba Marketing, taken from requirements to launch on WordPress, Wix and GoDaddy.",
-      "facts": [
-        { "label": "Role", "value": "Web Developer" },
-        { "label": "Covered", "value": "SEO, Core Web Vitals, accessibility" }
-      ],
-      "points": [
-        "Planned page structure and navigation with each client before building.",
-        "Trained clients after launch so they could update their own content with confidence."
-      ],
-      "link": {
-        "href": "https://symbamarketing.co.uk/",
-        "label": "Visit Symba Marketing"
-      }
-    }
-  ],
   "skills": [
-    { "title": "Websites and CMS", "items": "WordPress, ACF, Elementor, Gravity Forms, Strapi, Wix, MailerLite" },
-    { "title": "Front end", "items": "HTML, CSS and SCSS, JavaScript, TypeScript, React, Next.js" },
-    { "title": "Accessibility and UX", "items": "WCAG 2.1, responsive design, Figma wireframes and prototypes, A/B testing" },
-    { "title": "Quality and delivery", "items": "Cypress, PHPUnit, Jest, GitHub Actions, Docker, Jira, Google Tag Manager" }
+    {
+      "title": "Websites and CMS",
+      "items": "WordPress, ACF, Elementor, Gravity Forms, Strapi, Wix, MailerLite"
+    },
+    {
+      "title": "Front end",
+      "items": "HTML, CSS and SCSS, JavaScript, TypeScript, React, Next.js"
+    },
+    {
+      "title": "Accessibility and UX",
+      "items": "WCAG 2.1, responsive design, Figma wireframes and prototypes, A/B testing"
+    },
+    {
+      "title": "Quality and delivery",
+      "items": "Cypress, PHPUnit, Jest, GitHub Actions, Docker, Jira, Google Tag Manager"
+    }
   ]
 }

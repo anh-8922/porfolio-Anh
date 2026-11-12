@@ -1,14 +1,14 @@
 import Rail from '@/components/Rail';
 import Hero from '@/components/Hero';
-import CaseStudy from '@/components/CaseStudy';
 import timeline from '@/data/timeline.json';
 import work from '@/data/work.json';
+import journey from '@/data/journey.json';
 import { formatRange } from '@/lib/format';
 
-// Content lives in src/data/work.json (about, case studies, skills, contact)
-// and src/data/timeline.json (experience and training).
+// Content lives in src/data/work.json (about, skills, contact), src/data/journey.json
+// (the work stories, shown in full on /work) and src/data/timeline.json (experience and training).
 export default function Home() {
-  const { site, about, caseStudies, skills } = work;
+  const { site, about, skills } = work;
   const { experience, learning } = timeline;
 
   return (
@@ -19,10 +19,11 @@ export default function Home() {
 
         <main id="content">
           <Hero
-            name={site.name}
+            heroName={site.heroName}
             role={site.role}
             tagline={site.tagline}
-            featured={`Collections · ${caseStudies[0]?.org ?? ''}`}
+            featured="Collections · Learning on Screen"
+            cardHref="/work"
           />
 
           <section className="intro" aria-labelledby="about-h">
@@ -33,8 +34,22 @@ export default function Home() {
 
           <section id="work" aria-labelledby="work-h">
             <h2 id="work-h">Work</h2>
-            {caseStudies.map((study) => (
-              <CaseStudy key={study.title} study={study} />
+            {journey.chapters.map((c) => (
+              <article className="work" key={c.id}>
+                <p className="meta">
+                  <strong>{c.name}</strong>
+                  {c.dates}
+                </p>
+                <div className="body">
+                  <h3>{c.headline}</h3>
+                  <p>{c.teaser}</p>
+                  <dl className="facts">
+                    <div><dt>Role</dt><dd>{c.role}</dd></div>
+                    <div><dt>Highlight</dt><dd>{c.highlight}</dd></div>
+                  </dl>
+                  <a className="more" href={`/work#${c.id}`}>Read the full story</a>
+                </div>
+              </article>
             ))}
           </section>
 

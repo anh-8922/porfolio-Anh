@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-const NAV = [
+const HOME_NAV = [
   { href: '#top', label: 'Home' },
   { href: '#work', label: 'Work' },
   { href: '#experience', label: 'Experience' },
@@ -12,9 +12,9 @@ const NAV = [
 ];
 
 // Left-hand rail on desktop, sticky top bar on small screens.
-// Marks the link for the section currently in view.
-export default function Rail({ name, github, linkedin }) {
-  const [current, setCurrent] = useState('#top');
+// Marks the link for the section currently in view. Pages can pass their own menu items.
+export default function Rail({ name, github, linkedin, items = HOME_NAV, brandHref = '#top', backLink }) {
+  const [current, setCurrent] = useState(items[0]?.href);
 
   useEffect(() => {
     if (!('IntersectionObserver' in window)) return undefined;
@@ -26,28 +26,31 @@ export default function Rail({ name, github, linkedin }) {
       },
       { rootMargin: '-45% 0px -50% 0px' }
     );
-    NAV.forEach(({ href }) => {
+    items.forEach(({ href }) => {
       const target = document.querySelector(href);
       if (target) observer.observe(target);
     });
     return () => observer.disconnect();
-  }, []);
+  }, [items]);
 
   return (
     <header className="rail">
-      <a className="brand" href="#top">{name}</a>
+      <a className="brand" href={brandHref}>{name}</a>
       <nav className="nav" aria-label="Main">
         <ul>
-          {NAV.map(({ href, label }) => (
+          {items.map(({ href, label }) => (
             <li key={href}>
               <a href={href} aria-current={current === href ? 'true' : undefined}>{label}</a>
             </li>
           ))}
         </ul>
       </nav>
-      <div className="social">
-        <a href={github} target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href={linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <div className="rail-foot">
+        {backLink && <a className="back" href={backLink.href}>← {backLink.label}</a>}
+        <div className="social">
+          <a href={github} target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href={linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
       </div>
     </header>
   );

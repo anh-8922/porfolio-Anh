@@ -12,7 +12,7 @@ Portfolio of Anh Chau, web developer. A simple, accessible one-page site built w
 
 - **Less-is-more layout** - lightly tinted side rail with the menu (the current section is marked with a peach dash), an indigo hero with thin peach line artwork and a "Selected work" card, light sections below
 - **Themeable** - all colours are tokens, so a dark theme can be added later
-- **Case studies, not a CV list** - each project shows who it was for, my role, what I did and the result
+- **Work page with STAR stories** - `/work` tells each project as Situation, Task, Action, Result, with screenshots that open full-size
 - **Data-driven** - all content lives in two JSON files in `src/data/`
 - **Accessible** - skip link, semantic landmarks and heading order, visible keyboard focus, AA text contrast, reduced-motion support
 - **Responsive** - the side rail becomes a scrollable top menu on small screens
@@ -68,14 +68,17 @@ anh-portfolio/
 ├── src/
 │   ├── app/
 │   │   ├── layout.jsx        # Fonts and page metadata
-│   │   ├── page.jsx          # The one-page site: hero, about, work, experience, skills, training, contact
+│   │   ├── page.jsx          # Home: hero, about, work summary, experience, skills, training, contact
+│   │   ├── work/page.jsx     # Work page: STAR stories with screenshots
 │   │   └── globals.css       # All site styles (colour tokens at the top)
 │   ├── components/
 │   │   ├── Rail.jsx          # Side rail / top menu, highlights the section in view
 │   │   ├── Hero.jsx          # Indigo panel, SVG line artwork, name and "Selected work" card
-│   │   └── CaseStudy.jsx     # One case study
+│   │   ├── Journey.jsx       # Story and screenshot gallery blocks for /work
+│   │   └── ShotViewer.jsx    # Full-size screenshot viewer
 │   ├── data/
-│   │   ├── work.json         # ← Site details, about text, case studies, skills
+│   │   ├── work.json         # ← Site details, about text, skills
+│   │   ├── journey.json      # ← Work page stories, screenshots and principles
 │   │   └── timeline.json     # ← Experience and training
 │   └── lib/format.js         # Date formatting
 ├── next.config.js            # Includes the /projects → /#work redirect
@@ -125,8 +128,9 @@ npm start
 
 ## 📄 Pages
 
-- **`/`** - the whole portfolio on one page.
-- **`/projects`** - permanently redirects to `/#work`, so old links still work.
+- **`/`** - home: introduction, a short summary of each work chapter, experience, skills, training and contact.
+- **`/work`** - the full work stories with screenshots, for presenting or reading in depth.
+- **`/projects`** - permanently redirects to `/work`, so old links still work.
 
 ---
 
@@ -134,7 +138,8 @@ npm start
 
 ### Update content
 
-- **Case studies, skills, about text, contact links:** `src/data/work.json`. Each case study has `org`, `years`, `title`, `summary`, `facts`, `points` and an optional `link`.
+- **Work stories and screenshots:** `src/data/journey.json`. Screenshots live in `public/work/` (WebP, about 100KB each). Any `"todo"` field is a reminder: it shows highlighted in `npm run dev`, is hidden on the live site, and can be shown in a review build with `NEXT_PUBLIC_SHOW_TODOS=1 npm run build`.
+- **Skills, about text, contact links:** `src/data/work.json`. `site.heroName` sets the two lines of the big name in the hero (currently "Chau" above a larger "Anh"). Each case study has `org`, `years`, `title`, `summary`, `facts`, `points` and an optional `link`.
 - **Experience and training:** `src/data/timeline.json` (newest first). Experience rows show `role`, `company` and `summary`; training rows show `name`, `provider` and dates, with `"status": "in progress"` for a badge.
 - **Dates:** `"YYYY-MM"` or `"YYYY"`; `"end": null` shows "Present".
 
@@ -269,6 +274,8 @@ All rights reserved. Content and code © Anh Chau.
 ## 🔄 Updates
 
 ### Latest Changes
+- ✅ New `/work` page: STAR stories for Learning on Screen, freelance and I Like Music, with archived and live screenshots and a full-size viewer
+- ✅ Home Work section now summarises each chapter and links to the full story
 - ✅ New hero: indigo panel with original SVG line artwork (thin peach lines and one soft glow) and a "Selected work" card
 - ✅ Light page kept; removed duplicated section labels
 - ✅ Menu rail now has its own tint and divider so it stays readable beside the content

@@ -1,0 +1,344 @@
+{
+  "_notes": "Content for the /work page. Any \"todo\" field is a reminder for Anh: it shows highlighted when running `npm run dev` and is hidden on the live (production) site. Replace a todo with real text by moving it into the matching text field.",
+  "intro": {
+    "title": "Websites that work for the people who use them",
+    "lead": "Three chapters of WordPress and front-end work: an educational membership charity, small-business clients and a B2B music platform. Each story shows the problem, what I did, who I worked with and what changed.",
+    "note": "Learning on Screen is a rights-focused educational charity, so I don't keep copies of work that belongs to them. The Learning on Screen screenshots are of public pages, taken from copies archived by the Internet Archive's Wayback Machine. Some embedded videos don't play in the archive."
+  },
+  "chapters": [
+    {
+      "id": "los",
+      "name": "Learning on Screen",
+      "role": "Web Developer",
+      "dates": "Nov 2023 – Aug 2025",
+      "headline": "Collections and publishing tools for a membership charity",
+      "teaser": "Moved 16 broadcast collections onto one accessible platform and gave the marketing and content teams the WordPress tools to publish on their own.",
+      "highlight": "16 collections, 99% data integrity",
+      "intro": [
+        "Learning on Screen (the British Universities and Colleges Film and Video Council) is an educational charity that works with around 200 member institutions in higher, further and school education. Its services include Box of Broadcasts (BoB), an on-demand TV and radio service, and TRILT, an index of UK broadcast listings covering more than 560 channels from 1923 onwards.",
+        "I joined a small Agile development team and grew into a role that sat between development, marketing and content, UX, and the membership team who work with students, academics and researchers."
+      ],
+      "stories": [
+        {
+          "id": "collections",
+          "title": "Bringing the collections into one accessible home",
+          "situation": {
+            "text": "The broadcast collections lived on the older BUFVC site, with a different look and navigation from the main Learning on Screen website.",
+            "todo": "Add: what members or staff found hard about the old site."
+          },
+          "task": {
+            "text": "Move the collections to the new platform without losing data, and make them consistent and accessible for every user."
+          },
+          "action": [
+            {
+              "text": "Migrated 16 collections, including TRILT, Channel 4 Press Packs, Independent Radio and News on Screen."
+            },
+            {
+              "text": "Rebuilt the search forms, record views and audio players to be responsive and WCAG-compliant."
+            },
+            {
+              "text": "Built WordPress REST API endpoints so the older application could share the main site's header, footer and menus."
+            },
+            {
+              "text": "Worked with the membership team on what students and researchers needed.",
+              "todo": "Add: one piece of feedback and what you built in response."
+            },
+            {
+              "text": "Tested layout options on the test site before release."
+            }
+          ],
+          "result": {
+            "text": "16 collections migrated with 99% data integrity, brought together in one Collections and Databases hub.",
+            "todo": "Add a result you know: member feedback, usage, fewer support requests."
+          },
+          "galleries": [
+            {
+              "label": "Before · the older BUFVC site, February 2024",
+              "columns": 3,
+              "height": 260,
+              "shots": [
+                {
+                  "src": "/work/bufvc-home-2024.webp",
+                  "width": 1600,
+                  "height": 997,
+                  "title": "BUFVC homepage",
+                  "full": "BUFVC homepage · archived 6 Feb 2024",
+                  "alt": "BUFVC homepage in February 2024, with a search box, news list and purple header"
+                },
+                {
+                  "src": "/work/bufvc-trilt-2024.webp",
+                  "width": 1600,
+                  "height": 924,
+                  "title": "TRILT search",
+                  "full": "TRILT on the BUFVC site · archived 7 Feb 2024",
+                  "alt": "TRILT search page on the BUFVC site, February 2024"
+                },
+                {
+                  "src": "/work/bufvc-newsonscreen-2024.webp",
+                  "width": 1600,
+                  "height": 1022,
+                  "title": "News on Screen",
+                  "full": "News on Screen on the BUFVC site · archived 7 Feb 2024",
+                  "alt": "News on Screen landing page on the BUFVC site, February 2024"
+                }
+              ]
+            },
+            {
+              "label": "Shared header across the two platforms",
+              "columns": 1,
+              "shots": [
+                {
+                  "src": "/work/bufvc-header.webp",
+                  "width": 1600,
+                  "height": 318,
+                  "title": "Header and collection menus on the older application",
+                  "wide": true,
+                  "todo": "Confirm: served from the WordPress REST API endpoints you built.",
+                  "alt": "Header showing the BUFVC and Learning on Screen logos with the Television and Radio menu and collection tabs including TRILT"
+                }
+              ]
+            },
+            {
+              "label": "After · Collections and Databases on learningonscreen.ac.uk, 2025",
+              "after": true,
+              "columns": 2,
+              "shots": [
+                {
+                  "src": "/work/los-collections-2025b.webp",
+                  "width": 1232,
+                  "height": 1500,
+                  "title": "Collections hub",
+                  "full": "Collections and Databases · archived 17 Mar 2025",
+                  "alt": "Collections and Databases page with a grid of cards for each collection, March 2025"
+                },
+                {
+                  "src": "/work/los-collections-2025a.webp",
+                  "width": 536,
+                  "height": 1780,
+                  "title": "Collections grouped by theme",
+                  "full": "Collections and Databases · archived 2025",
+                  "alt": "Collections and Databases page grouped into Television and Radio and News on Screen sections"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "publishing",
+          "title": "Giving the marketing and content teams the tools to publish",
+          "situation": {
+            "text": "The marketing and content teams needed to build and update pages themselves, but the WordPress theme didn't have the building blocks they needed. At the same time, an external agency was redesigning the main website."
+          },
+          "task": {
+            "text": "Fill the gaps in the platform and make sure colleagues could publish confidently once the new site launched."
+          },
+          "action": [
+            {
+              "text": "Built reusable components editors could add to any page: hero, tiles, cards, accordion, tabs and video player."
+            },
+            {
+              "text": "Integrated Advanced Custom Fields, MailerLite sign-ups, Google Tag Manager and cookie consent."
+            },
+            {
+              "text": "Coordinated reviews of the agency's work with the content strategist and marketing specialist through Jira, Teams and meetings, and handled the handover with our tech lead."
+            },
+            {
+              "text": "Trained marketing colleagues to publish content in WordPress.",
+              "todo": "Add: how (sessions, written guides, one-to-one)."
+            },
+            {
+              "text": "",
+              "todo": "Add: one example of working with the UX team, and what changed."
+            }
+          ],
+          "result": {
+            "text": "The content team could build and publish pages without waiting for a developer.",
+            "todo": "Add an example of a page or campaign they launched themselves."
+          },
+          "galleries": [
+            {
+              "columns": 1,
+              "height": 520,
+              "shots": [
+                {
+                  "src": "/work/los-home-2024.webp",
+                  "width": 1076,
+                  "height": 2484,
+                  "title": "Learning on Screen homepage, July 2024",
+                  "caption": "Embedded videos don't play in the archive",
+                  "full": "Learning on Screen homepage · archived 3 Jul 2024",
+                  "alt": "Learning on Screen homepage in July 2024 with hero image, mission statement and Spotlight cards"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "arena",
+          "title": "Your Local Arena microsite",
+          "situation": {
+            "text": "Your Local Arena was an Arts Council England-funded project with Lucy Hannah and Speaking Volumes, matching films from the BBC's Arena archive with literary festivals and venues across the UK."
+          },
+          "task": {
+            "text": "Give the project one place for its events, films and features."
+          },
+          "action": [
+            {
+              "text": "Built the microsite in WordPress: an introduction, the roundtable film, a grid of event pages, features, and background on Arena and its editor.",
+              "todo": "Add: who you worked with and anything you built specially."
+            }
+          ],
+          "result": {
+            "text": "One microsite bringing together the project's 13 screened events, its films and its features."
+          },
+          "galleries": [
+            {
+              "columns": 1,
+              "height": 480,
+              "shots": [
+                {
+                  "src": "/work/yla-microsite.webp",
+                  "width": 539,
+                  "height": 2552,
+                  "title": "Your Local Arena",
+                  "caption": "The video error appears because the archive can't stream it",
+                  "full": "Your Local Arena · archived copy",
+                  "alt": "Your Local Arena microsite with pink header, introduction, video player and grid of event tiles"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "freelance",
+      "name": "Freelance",
+      "role": "Web Developer",
+      "dates": "Jul 2022 – Aug 2025",
+      "headline": "Small-business websites, built and handed over",
+      "teaser": "Built small-business websites from brief to launch, then trained clients to run them, including Symba Marketing.",
+      "highlight": "Client-managed CMS",
+      "stories": [
+        {
+          "id": "symba",
+          "title": "Symba Marketing: from first build to a CMS the client runs",
+          "situation": {
+            "text": "Symba Marketing supports charities, CICs and social enterprises with marketing. It needed a website that explained its services clearly and brought in enquiries.",
+            "todo": "Add: was there an old site, and what was it built on?"
+          },
+          "task": {
+            "text": "Build the site from scratch and hand over a site the team could manage themselves.",
+            "todo": "Add: if you migrated an existing site, from which platform."
+          },
+          "action": [
+            {
+              "text": "Planned the page structure and navigation with the client before building."
+            },
+            {
+              "text": "Built the site with clear calls to action to book a free consultation.",
+              "todo": "Add: which platform (WordPress or Wix)."
+            },
+            {
+              "text": "Covered SEO, Core Web Vitals and accessibility."
+            },
+            {
+              "text": "Trained the Symba team after launch so they could update their own content."
+            }
+          ],
+          "result": {
+            "text": "A live site the client runs and updates without developer help.",
+            "todo": "Add a result if you know one: enquiries, client feedback."
+          },
+          "galleries": [
+            {
+              "columns": 1,
+              "height": 520,
+              "shots": [
+                {
+                  "src": "/work/symba-home.webp",
+                  "width": 1063,
+                  "height": 2050,
+                  "title": "symbamarketing.co.uk",
+                  "caption": "Live site",
+                  "full": "Symba Marketing · live site",
+                  "alt": "Symba Marketing homepage with the headline Marketing for charities that can't afford to get it wrong, and vision, core values and mission sections"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ilm",
+      "name": "I Like Music",
+      "role": "Contract Full-Stack Developer",
+      "dates": "Oct 2025 – Sep 2026",
+      "headline": "A business-critical marketing site and its relaunch",
+      "teaser": "Managed and extended a business-critical WordPress marketing site, fixed a live outage within an hour, and built the relaunch site.",
+      "highlight": "Live site restored within an hour",
+      "stories": [
+        {
+          "id": "ilm-site",
+          "title": "Keeping a B2B marketing site running, and building its replacement",
+          "situation": {
+            "text": "I Like Music licenses music to broadcasters, businesses and schools. Its WordPress marketing site was live and business-critical, and a relaunch was planned."
+          },
+          "task": {
+            "text": "Manage and extend the live site, and design and build the new one."
+          },
+          "action": [
+            {
+              "text": "Extended the site with custom templates and fields (Elementor, Gravity Forms, ACF), enquiry forms to email and LinkedIn tracking."
+            },
+            {
+              "text": "When a CAPTCHA plugin update crashed the site because it needed a newer PHP version, diagnosed the cause and fixed it with our DevOps engineer."
+            },
+            {
+              "text": "Agreed requirements for the relaunch with the client services team, designed it in Figma and built it. It hasn't launched yet, so I describe it here rather than show it."
+            }
+          ],
+          "result": {
+            "text": "The live site was back online within an hour, and plugin updates are now checked on staging first. The relaunch site is complete and ready for launch."
+          },
+          "galleries": [
+            {
+              "columns": 1,
+              "height": 440,
+              "shots": [
+                {
+                  "src": "/work/ilm-home.webp",
+                  "width": 577,
+                  "height": 960,
+                  "title": "web.ilikemusic.com",
+                  "caption": "Live WordPress site I managed",
+                  "full": "I Like Music · live site",
+                  "alt": "I Like Music homepage with the headline Music for Business and service icons on a pink band"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "principles": [
+    {
+      "title": "Start with the user",
+      "text": "Students, researchers, members or customers: what they need to find, and how quickly."
+    },
+    {
+      "title": "Build what's missing",
+      "text": "When the platform doesn't do it, I add the component, plugin or integration, then test it properly."
+    },
+    {
+      "title": "Bring people with me",
+      "text": "Content owners, agencies and developers. I translate between them and train colleagues to publish confidently."
+    },
+    {
+      "title": "Check the result",
+      "text": "Accessibility checks, testing on staging and analytics, so changes do what they were meant to."
+    }
+  ]
+}

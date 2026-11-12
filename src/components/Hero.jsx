@@ -29,21 +29,20 @@ function HeroLines() {
   );
 }
 
-export default function Hero({ name, role, tagline, featured }) {
-  const [first, ...rest] = name.split(' ');
-
+// heroName sets the two lines of the big name: a smaller top line and a large bottom line.
+export default function Hero({ heroName, role, tagline, featured, cardHref = '#work' }) {
   return (
     <div className="hero" id="top">
       <HeroLines />
       <h1>
-        <span className="first">{first}</span>
-        <span className="last">{rest.join(' ')}</span>
+        <span className="first">{heroName.top}</span>
+        <span className="last">{heroName.bottom}</span>
       </h1>
       <p>
         <strong>{role}.</strong> {tagline}
       </p>
 
-      <a className="card" href="#work" aria-label="See selected work">
+      <a className="card" href={cardHref} aria-label="See selected work">
         <div className="shot" aria-hidden="true">
           <div className="bar"><i /><i /><i /><span>{featured}</span></div>
           <div className="mock">

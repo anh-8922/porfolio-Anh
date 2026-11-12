@@ -9,9 +9,9 @@ const nextConfig = {
   // Enable SWC minification for faster builds
   swcMinify: true,
 
-  // The old /projects page is now the Work section of the home page
+  // The old /projects page is now the /work page
   async redirects() {
-    return [{ source: '/projects', destination: '/#work', permanent: true }]
+    return [{ source: '/projects', destination: '/work', permanent: true }]
   },
 
   // Configure webpack for hot reload in Docker
