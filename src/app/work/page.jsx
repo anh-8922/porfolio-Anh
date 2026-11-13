@@ -13,13 +13,13 @@ export const metadata = {
 const NAV = [
   { href: '#top', label: 'Overview' },
   ...journey.chapters.map((c) => ({ href: `#${c.id}`, label: c.name })),
-  { href: '#how', label: 'How I work' },
+  { href: '#learned', label: 'What I learned' },
 ];
 
 // Content lives in src/data/journey.json.
 export default function WorkPage() {
   const { site } = work;
-  const { intro, chapters, principles } = journey;
+  const { intro, chapters, lessons } = journey;
 
   return (
     <>
@@ -68,11 +68,11 @@ export default function WorkPage() {
             </section>
           ))}
 
-          <section id="how" aria-labelledby="how-h">
-            <p className="eyebrow">Across all three</p>
-            <h2 id="how-h">How I work</h2>
+          <section id="learned" aria-labelledby="learned-h">
+            <p className="eyebrow">Looking back</p>
+            <h2 id="learned-h">What I learned</h2>
             <div className="principles">
-              {principles.map((p) => (
+              {lessons.map((p) => (
                 <div key={p.title}>
                   <h3>{p.title}</h3>
                   <p>{p.text}</p>

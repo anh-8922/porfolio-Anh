@@ -78,7 +78,7 @@ anh-portfolio/
 │   │   └── ShotViewer.jsx    # Full-size screenshot viewer
 │   ├── data/
 │   │   ├── work.json         # ← Site details, about text, skills
-│   │   ├── journey.json      # ← Work page stories, screenshots and principles
+│   │   ├── journey.json      # ← Work page stories, screenshots and lessons learned
 │   │   └── timeline.json     # ← Experience and training
 │   └── lib/format.js         # Date formatting
 ├── next.config.js            # Includes the /projects → /#work redirect

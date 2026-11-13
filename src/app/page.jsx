@@ -45,7 +45,7 @@ export default function Home() {
                   <p>{c.teaser}</p>
                   <dl className="facts">
                     <div><dt>Role</dt><dd>{c.role}</dd></div>
-                    <div><dt>Highlight</dt><dd>{c.highlight}</dd></div>
+                    <div><dt>Key skills</dt><dd>{c.highlight}</dd></div>
                   </dl>
                   <a className="more" href={`/work#${c.id}`}>Read the full story</a>
                 </div>
