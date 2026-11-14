@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <a className="skip" href="#content">Skip to content</a>
       <div className="frame">
-        <Rail name={site.name} github={site.github} linkedin={site.linkedin} />
+        <Rail name={site.name} showBrand={false} github={site.github} linkedin={site.linkedin} />
 
         <main id="content">
           <Hero

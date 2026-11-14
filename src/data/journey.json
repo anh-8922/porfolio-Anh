@@ -88,6 +88,16 @@
               "columns": 1,
               "shots": [
                 {
+                  "src": "/work/los-shared-nav.svg",
+                  "width": 960,
+                  "height": 420,
+                  "wide": true,
+                  "title": "How the shared navigation works",
+                  "caption": "Menus are edited once in WordPress and served to the collections application through a REST API endpoint",
+                  "full": "Learning on Screen · shared navigation across two platforms",
+                  "alt": "Diagram: the WordPress CMS on learningonscreen.ac.uk holds the header, main menu, collection menus and footer, and sends them through a REST API endpoint to the collections application on bufvc.ac.uk, which shows the same header and menus"
+                },
+                {
                   "src": "/work/bufvc-header.webp",
                   "width": 1975,
                   "height": 393,
@@ -153,6 +163,55 @@
           },
           "galleries": [
             {
+              "label": "Page components for editors",
+              "note": "Editors could add these to any page without a developer. Shown here as simplified wireframes in the site's colours.",
+              "columns": 1,
+              "shots": [
+                {
+                  "src": "/work/los-components.svg",
+                  "width": 960,
+                  "height": 516,
+                  "wide": true,
+                  "title": "Component library",
+                  "caption": "Hero, tiles, cards, accordion, tabs, video player, sign-up form and cookie consent",
+                  "full": "Learning on Screen · page components (simplified wireframes)",
+                  "alt": "Simplified wireframes of eight page components: hero, tiles, cards, accordion, tabs, video player, sign-up form and cookie consent banner"
+                }
+              ],
+              "palette": [
+                {
+                  "name": "Deep purple",
+                  "hex": "#220C43",
+                  "use": "Primary, headings and dark panels"
+                },
+                {
+                  "name": "Magenta",
+                  "hex": "#EC008C",
+                  "use": "Calls to action"
+                },
+                {
+                  "name": "Blue",
+                  "hex": "#0077C8",
+                  "use": "Secondary, links and tiles"
+                },
+                {
+                  "name": "Teal",
+                  "hex": "#00B0B9",
+                  "use": "Secondary, tiles"
+                },
+                {
+                  "name": "Slate",
+                  "hex": "#474C55",
+                  "use": "Supporting text"
+                },
+                {
+                  "name": "Light grey",
+                  "hex": "#F4F3F6",
+                  "use": "Page sections"
+                }
+              ]
+            },
+            {
               "columns": 1,
               "height": 520,
               "shots": [
@@ -165,7 +224,8 @@
                   "full": "Learning on Screen homepage · archived 3 Jul 2024",
                   "alt": "Learning on Screen homepage in July 2024 with hero image, mission statement and Spotlight cards"
                 }
-              ]
+              ],
+              "label": "The live homepage, July 2024"
             }
           ]
         },
@@ -287,7 +347,7 @@
               "text": "Agreed requirements for the relaunch with the client services team, then designed it in Figma and built it."
             },
             {
-              "text": "Organised the new homepage around the customer journey: who it's for, from DJs to broadcasters; how to buy, from self-serve to managed; the catalogues and developer API; and a clear route to the platform or the sales team."
+              "text": "Organised the new homepage around the customer journey, so each type of customer can quickly see the service is for them and find a clear next step."
             }
           ],
           "result": {
@@ -311,28 +371,42 @@
               ]
             },
             {
-              "label": "After · the relaunched homepage I designed and built, 2026",
+              "label": "After · the relaunch homepage, shown as a wireframe",
               "after": true,
-              "columns": 2,
+              "note": "The project has been delivered and is due to launch, so I share only a simplified wireframe here rather than the finished design. Each section answers the visitor's next question, from \"is this for me?\" to \"how do I get in touch?\", and one accent colour is kept for calls to action.",
+              "columns": 1,
               "height": 520,
               "shots": [
                 {
-                  "src": "/work/ilm-relaunch-1.webp",
-                  "width": 464,
-                  "height": 1420,
-                  "title": "Relaunch homepage, part 1",
-                  "caption": "Customers, plans, catalogues, API",
-                  "full": "I Like Music · relaunched homepage, part 1",
-                  "alt": "Top half of the relaunched I Like Music homepage: the headline Music that means business, customer types from indie DJs to iconic brands, Self-serve, Integrated and Managed options, music catalogue charts and a developer API section"
+                  "src": "/work/ilm-wireframe.svg",
+                  "width": 960,
+                  "height": 1486,
+                  "title": "Relaunch homepage wireframe",
+                  "caption": "Section order only, redrawn without content",
+                  "full": "I Like Music relaunch · homepage wireframe",
+                  "alt": "Simplified wireframe of a homepage in six sections: hero with two calls to action, who it's for, how it works, highlights, proof and a contact form"
+                }
+              ],
+              "palette": [
+                {
+                  "name": "Magenta",
+                  "hex": "#C51B73",
+                  "use": "Calls to action"
                 },
                 {
-                  "src": "/work/ilm-relaunch-2.webp",
-                  "width": 464,
-                  "height": 1156,
-                  "title": "Relaunch homepage, part 2",
-                  "caption": "Licensing, pricing, contact",
-                  "full": "I Like Music · relaunched homepage, part 2",
-                  "alt": "Bottom half of the relaunched I Like Music homepage: why music licensing matters, pricing plans, trusted-by section and a contact form"
+                  "name": "Navy",
+                  "hex": "#080F1C",
+                  "use": "Background"
+                },
+                {
+                  "name": "Off-white",
+                  "hex": "#EBEEF5",
+                  "use": "Headings and main text"
+                },
+                {
+                  "name": "Slate",
+                  "hex": "#8B96B0",
+                  "use": "Secondary text"
                 }
               ]
             }
@@ -342,14 +416,17 @@
           "id": "ilm-data",
           "title": "Development work for the new platform",
           "situation": {
-            "text": "At the same time, I Like Music was moving customers from its legacy application to a new platform, and every music catalogue had to arrive complete and accurate."
+            "text": "I Like Music was migrating its infrastructure and relaunching its platform, covering client service management, a radio streaming service and catalogue ingestion."
           },
           "task": {
-            "text": "Build features for the new platform and keep catalogue data reliable."
+            "text": "Build features for the new platform and keep the catalogue data ingestion pipelines reliable."
           },
           "action": [
             {
               "text": "Contributed to AWS Lambda consumers and database ingestion pipelines for catalogue data."
+            },
+            {
+              "text": "Maintained and ran ingestion for commercial and production music catalogues."
             },
             {
               "text": "Wrote Python tools to validate catalogues before they were loaded."
@@ -362,7 +439,7 @@
             }
           ],
           "result": {
-            "text": "Catalogue data was checked before it reached the new platform, clients had the portal features they needed for the move, and the business had usage reports to work from."
+            "text": "Commercial and production catalogues continued to be loaded and checked throughout the migration, clients had the portal features they needed for the move, and the business had usage reports to work from."
           }
         }
       ]

@@ -42,16 +42,37 @@ function Shot({ shot, height }) {
   );
 }
 
+// Colour swatches, used when a design can't be shown as a screenshot.
+function Palette({ colours, label = 'Colour scheme' }) {
+  return (
+    <div className="palette">
+      <p className="compare-label">{label}</p>
+      <ul>
+        {colours.map((c) => (
+          <li key={c.hex}>
+            <span className="swatch" style={{ background: c.hex }} aria-hidden="true" />
+            <strong>{c.name}</strong>
+            <code>{c.hex}</code>
+            <span>{c.use}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 function Gallery({ gallery }) {
   const cols = gallery.columns === 3 ? ' three' : gallery.columns === 2 ? ' two' : '';
   return (
     <>
       {gallery.label && <p className={`compare-label${gallery.after ? ' after' : ''}`}>{gallery.label}</p>}
+      {gallery.note && <p className="gallery-note">{gallery.note}</p>}
       <div className={`shots${cols}`}>
         {gallery.shots.map((shot) => (
           <Shot key={shot.src} shot={shot} height={gallery.height} />
         ))}
       </div>
+      {gallery.palette && <Palette colours={gallery.palette} label={gallery.paletteLabel} />}
     </>
   );
 }

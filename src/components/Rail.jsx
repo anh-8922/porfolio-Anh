@@ -13,7 +13,8 @@ const HOME_NAV = [
 
 // Left-hand rail on desktop, sticky top bar on small screens.
 // Marks the link for the section currently in view. Pages can pass their own menu items.
-export default function Rail({ name, github, linkedin, items = HOME_NAV, brandHref = '#top', backLink }) {
+// showBrand: the home page hides the name here because the hero already shows it.
+export default function Rail({ name, github, linkedin, items = HOME_NAV, brandHref = '#top', backLink, showBrand = true }) {
   const [current, setCurrent] = useState(items[0]?.href);
 
   useEffect(() => {
@@ -35,7 +36,7 @@ export default function Rail({ name, github, linkedin, items = HOME_NAV, brandHr
 
   return (
     <header className="rail">
-      <a className="brand" href={brandHref}>{name}</a>
+      {showBrand && <a className="brand" href={brandHref}>{name}</a>}
       <nav className="nav" aria-label="Main">
         <ul>
           {items.map(({ href, label }) => (

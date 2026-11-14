@@ -203,3 +203,12 @@ dialog.viewer img{display:block;width:auto;max-width:100%;height:auto;margin:0 a
   section{padding-block:64px;padding-inline:max(16px,env(safe-area-inset-left,0px))}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.nav a{transition:none}}
+
+/* Work page: note under a gallery label, and brand colour swatches */
+.gallery-note{max-width:68ch;margin:-4px 0 16px;color:var(--muted);font-size:15px;line-height:1.6}
+.palette{margin-top:24px}
+.palette ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px}
+.palette li{display:grid;gap:2px;font-size:14px;line-height:1.4}
+.palette .swatch{display:block;height:56px;border-radius:6px;border:1px solid var(--line);margin-bottom:6px}
+.palette code{font-size:13px;color:var(--muted)}
+.palette li > span:last-child{color:var(--muted)}
