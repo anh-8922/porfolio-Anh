@@ -1,4 +1,4 @@
-// Hero: name and tagline on a navy panel with thin peach line artwork, plus a card that leads to the work.
+// Hero: name and tagline on a navy panel with thin peach line artwork, plus two clear calls to action.
 // The artwork is drawn in SVG; its colours come from the --art-* tokens in globals.css.
 function HeroLines() {
   return (
@@ -31,7 +31,7 @@ function HeroLines() {
 
 // heroName sets the big name: either { single } for one line at one size,
 // or { top, bottom } for a smaller top line over a large bottom line.
-export default function Hero({ heroName, role, tagline, featured, cardHref = '#work' }) {
+export default function Hero({ heroName, role, tagline, workHref = '/work', contactHref = '#contact' }) {
   return (
     <div className="hero" id="top">
       <HeroLines />
@@ -49,16 +49,12 @@ export default function Hero({ heroName, role, tagline, featured, cardHref = '#w
         <strong>{role}.</strong> {tagline}
       </p>
 
-      <a className="card" href={cardHref} aria-label="See selected work">
-        <div className="shot" aria-hidden="true">
-          <div className="bar"><i /><i /><i /><span>{featured}</span></div>
-          <div className="mock">
-            <div><div className="h" /><div className="t" /><div className="t" /><div className="t s" /></div>
-            <div className="tiles"><b /><b /><b /><b /></div>
-          </div>
-        </div>
-        <div className="tab"><span>Selected work</span></div>
-      </a>
+      <div className="hero-actions">
+        <a className="btn btn-primary" href={workHref}>
+          See my work <span aria-hidden="true">→</span>
+        </a>
+        <a className="btn btn-ghost" href={contactHref}>Get in touch</a>
+      </div>
     </div>
   );
 }

@@ -68,7 +68,7 @@ anh-portfolio/
 ├── src/
 │   ├── app/
 │   │   ├── layout.jsx        # Fonts and page metadata
-│   │   ├── page.jsx          # Home: hero, about, work summary, experience, skills, training, contact
+│   │   ├── page.jsx          # Home: hero, about (with key tools), work cards, experience, qualifications, contact
 │   │   ├── work/page.jsx     # Work page: STAR stories with screenshots
 │   │   └── globals.css       # All site styles (colour tokens at the top)
 │   ├── components/
@@ -77,9 +77,9 @@ anh-portfolio/
 │   │   ├── Journey.jsx       # Story and screenshot gallery blocks for /work
 │   │   └── ShotViewer.jsx    # Full-size screenshot viewer
 │   ├── data/
-│   │   ├── work.json         # ← Site details, about text, skills
+│   │   ├── work.json         # ← Site details, about text, key tools
 │   │   ├── journey.json      # ← Work page stories, screenshots and lessons learned
-│   │   └── timeline.json     # ← Experience and training
+│   │   └── timeline.json     # ← Experience and qualifications
 │   └── lib/format.js         # Date formatting
 ├── next.config.js            # Includes the /projects → /#work redirect
 └── ...
@@ -128,7 +128,8 @@ npm start
 
 ## 📄 Pages
 
-- **`/`** - home: introduction, a short summary of each work chapter, experience, skills, training and contact.
+- **`/`** - home: introduction, a short summary of each work chapter, experience, qualifications and contact.
+- **`/blog`** - blog index; **`/blog/<slug>`** - a single post.
 - **`/work`** - the full work stories with screenshots, for presenting or reading in depth.
 - **`/projects`** - permanently redirects to `/work`, so old links still work.
 
@@ -140,7 +141,7 @@ npm start
 
 - **Work stories and screenshots:** `src/data/journey.json`. Screenshots live in `public/work/` (WebP, about 100KB each). Any `"todo"` field is a reminder: it shows highlighted in `npm run dev`, is hidden on the live site, and can be shown in a review build with `NEXT_PUBLIC_SHOW_TODOS=1 npm run build`.
 - **Skills, about text, contact links:** `src/data/work.json`. `site.heroName` sets the big name in the hero: `{ "single": "Anh Chau" }` for one line (current), or `{ "top": "Chau", "bottom": "Anh" }` for a small line over a large one. Each case study has `org`, `years`, `title`, `summary`, `facts`, `points` and an optional `link`.
-- **Experience and training:** `src/data/timeline.json` (newest first). Experience rows show `role`, `company` and `summary`; training rows show `name`, `provider` and dates, with `"status": "in progress"` for a badge.
+- **Experience and qualifications:** `src/data/timeline.json` (newest first). Experience rows show `role`, `company` and `summary`; qualification rows show `name`, `provider` and dates, with `"status": "in progress"` for a badge and an optional `"link"` to the certificate.
 - **Dates:** `"YYYY-MM"` or `"YYYY"`; `"end": null` shows "Present".
 
 ### Change colours or fonts
@@ -280,7 +281,7 @@ All rights reserved. Content and code © Anh Chau.
 - ✅ Light page kept; removed duplicated section labels
 - ✅ Menu rail now has its own tint and divider so it stays readable beside the content
 - ✅ Redesigned as a light, one-page "less is more" layout: side rail, colour-panel hero, case studies
-- ✅ Content split into `work.json` (case studies, skills) and `timeline.json` (experience, training)
+- ✅ Content split into `work.json` (case studies, skills) and `timeline.json` (experience, qualifications)
 - ✅ `/projects` now redirects to `/#work`; removed the unused `lucide-react` dependency
 - ✅ Switched fonts from Raleway to Barlow Condensed and Barlow
 - ✅ Rebuilt /projects as a data-driven experience timeline (`src/data/timeline.json`)
@@ -313,3 +314,10 @@ If you have questions or need help:
 **Live:** [chauanh.netlify.app](https://chauanh.netlify.app)
 
 **Last Updated:** November 2026
+
+## Blog
+
+Posts live in `src/data/blog.json`. Each post has a `slug`, `title`, `date` (YYYY-MM-DD), `summary`, `tags`, an optional `source` (the book or article) and `related` links, and a `body` made of blocks: `{"p": "..."}`, `{"h2": "..."}`, `{"ul": [...]}`, `{"ol": [...]}` and `{"todo": "..."}` for notes to yourself. Write links as `[text](url)` and bold as `**text**`.
+
+- `"draft": true` shows the post in `npm run dev` but hides it on the live site. Remove it (or set `false`) to publish.
+- The **Blog** menu item on the home page only appears once at least one post is published.

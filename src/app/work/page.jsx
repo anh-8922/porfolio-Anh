@@ -1,6 +1,7 @@
 import Rail from '@/components/Rail';
 import ShotViewer from '@/components/ShotViewer';
 import { Story } from '@/components/Journey';
+import Linked from '@/components/Linked';
 import journey from '@/data/journey.json';
 import work from '@/data/work.json';
 
@@ -12,14 +13,6 @@ export const metadata = {
 
 // The menu lists only the work itself; the overview, lessons and usage notes are reached by scrolling.
 const NAV = journey.chapters.map((c) => ({ href: `#${c.id}`, label: c.name }));
-
-// Turns [label](url) in a paragraph from journey.json into a link.
-function Linked({ text }) {
-  return text.split(/(\[[^\]]+\]\([^)]+\))/).map((part, i) => {
-    const m = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-    return m ? <a key={i} className="inline-link" href={m[2]}>{m[1]}</a> : part;
-  });
-}
 
 // Content lives in src/data/journey.json.
 export default function WorkPage() {

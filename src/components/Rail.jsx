@@ -1,15 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-
-const HOME_NAV = [
-  { href: '#top', label: 'Home' },
-  { href: '#work', label: 'Work' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#training', label: 'Training' },
-  { href: '#contact', label: 'Contact' },
-];
+import { HOME_NAV } from '@/lib/nav';
 
 // Left-hand rail on desktop, sticky top bar on small screens.
 // Marks the link for the section currently in view. Pages can pass their own menu items.
@@ -30,6 +22,7 @@ export default function Rail({ name, github, linkedin, items = HOME_NAV, brandHr
       { rootMargin: '-45% 0px -50% 0px' }
     );
     items.forEach(({ href }) => {
+      if (!href.startsWith('#')) return;
       const target = document.querySelector(href);
       if (target) observer.observe(target);
     });
@@ -46,7 +39,7 @@ export default function Rail({ name, github, linkedin, items = HOME_NAV, brandHr
   return (
     <header className={`rail${trail ? ' trail' : ''}`}>
       {showBrand && <a className="brand" href={brandHref}>{name}</a>}
-      <nav className="nav" aria-label="Main">
+      {items.length > 0 && <nav className="nav" aria-label="Main">
         <ul>
           {items.filter((i) => !i.secondary).map(link)}
         </ul>
@@ -55,7 +48,7 @@ export default function Rail({ name, github, linkedin, items = HOME_NAV, brandHr
             {items.filter((i) => i.secondary).map(link)}
           </ul>
         )}
-      </nav>
+      </nav>}
       <div className="rail-foot">
         {backLink && <a className="back" href={backLink.href}>← {backLink.label}</a>}
         <div className="social">

@@ -14,24 +14,7 @@
   },
   "about": {
     "lead": "I make websites easier to use for their visitors and easier to manage for the teams who run them.",
-    "body": "Experience in WordPress and front-end development for a membership charity, a B2B music platform and small-business clients. I care about accessibility and usability: key information first, clear headings, links that say where they lead, consistent navigation and WCAG 2.1 compliance. I collaborate with content owners, agencies, UX and developers, and support and train non-technical colleagues to use the tools and publish pages with confidence."
-  },
-  "skills": [
-    {
-      "title": "Websites and CMS",
-      "items": "WordPress, ACF, Elementor, Gravity Forms, Strapi, Wix, MailerLite"
-    },
-    {
-      "title": "Front end",
-      "items": "HTML, CSS and SCSS, JavaScript, TypeScript, React, Next.js"
-    },
-    {
-      "title": "Accessibility and UX",
-      "items": "WCAG 2.1, responsive design, Figma wireframes and prototypes, A/B testing"
-    },
-    {
-      "title": "Quality and delivery",
-      "items": "Cypress, PHPUnit, Jest, GitHub Actions, Docker, Jira, Google Tag Manager"
-    }
-  ]
+    "body": "Experience in WordPress and front-end development for a membership charity, a B2B music platform and small-business clients. I care about accessibility and usability: key information first, clear headings, links that say where they lead, consistent navigation and WCAG 2.1 compliance. I collaborate with content owners, agencies, UX and developers, and support and train non-technical colleagues to use the tools and publish pages with confidence.",
+    "tools": "WordPress (ACF, Elementor, Gravity Forms), HTML, CSS, JavaScript, React, Next.js, Figma, Jira, WCAG 2.1."
+  }
 }

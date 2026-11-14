@@ -1,56 +1,62 @@
 import Rail from '@/components/Rail';
+import { HOME_NAV } from '@/lib/nav';
+import { getPosts } from '@/lib/blog';
 import Hero from '@/components/Hero';
 import timeline from '@/data/timeline.json';
 import work from '@/data/work.json';
 import journey from '@/data/journey.json';
 import { formatRange } from '@/lib/format';
 
-// Content lives in src/data/work.json (about, skills, contact), src/data/journey.json
-// (the work stories, shown in full on /work) and src/data/timeline.json (experience and training).
+// Content lives in src/data/work.json (about, tools, contact), src/data/blog.json (posts), src/data/journey.json
+// (the work stories, shown in full on /work) and src/data/timeline.json (experience and qualifications).
 export default function Home() {
-  const { site, about, skills } = work;
+  const { site, about } = work;
+  // The Blog link only appears once at least one post is published.
+  const nav = getPosts().length > 0 ? HOME_NAV : HOME_NAV.filter((i) => i.href !== '/blog');
   const { experience, learning } = timeline;
 
   return (
     <>
       <a className="skip" href="#content">Skip to content</a>
       <div className="frame">
-        <Rail name={site.name} showBrand={false} github={site.github} linkedin={site.linkedin} />
+        <Rail name={site.name} showBrand={false} items={nav} github={site.github} linkedin={site.linkedin} />
 
         <main id="content">
           <Hero
             heroName={site.heroName}
             role={site.role}
             tagline={site.tagline}
-            featured="Collections · Learning on Screen"
-            cardHref="/work"
           />
 
           <section className="intro" aria-labelledby="about-h">
             <p className="label" id="about-h">About</p>
             <p>{about.lead}</p>
             <p className="sub">{about.body}</p>
+            {about.tools && <p className="tools"><span>Tools I work with</span> {about.tools}</p>}
           </section>
 
           <section id="work" aria-labelledby="work-h">
             <h2 id="work-h">Work</h2>
-            {journey.chapters.map((c) => (
-              <article className="work" key={c.id}>
-                <p className="meta">
-                  <strong>{c.name}</strong>
-                  {c.dates}
-                </p>
-                <div className="body">
-                  <h3>{c.headline}</h3>
-                  <p>{c.teaser}</p>
-                  <dl className="facts">
-                    <div><dt>Role</dt><dd>{c.role}</dd></div>
-                    <div><dt>Key skills</dt><dd>{c.highlight}</dd></div>
-                  </dl>
-                  <a className="more" href={`/work#${c.id}`}>Read the full story</a>
-                </div>
-              </article>
-            ))}
+            <ul className="work-cards">
+              {journey.chapters.map((c) => (
+                <li key={c.id}>
+                  <a className="work-card" href={`/work#${c.id}`}>
+                    <div className="cover">
+                      <img src={c.cover} alt="" />
+                    </div>
+                    <div className="card-body">
+                      <p className="eyebrow">{c.name}</p>
+                      <h3>{c.headline}</h3>
+                      <p>{c.teaser}</p>
+                      <ul className="tags" aria-label="Key skills">
+                        {c.highlight.split(', ').slice(0, 4).map((t) => <li key={t}>{t}</li>)}
+                      </ul>
+                      <span className="more">Read the full story <span aria-hidden="true">→</span></span>
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </section>
 
           <section id="experience" aria-labelledby="exp-h">
@@ -68,26 +74,15 @@ export default function Home() {
             </ul>
           </section>
 
-          <section id="skills" aria-labelledby="skills-h">
-            <h2 id="skills-h">Skills</h2>
-            <div className="skills">
-              {skills.map((group) => (
-                <div key={group.title}>
-                  <h3>{group.title}</h3>
-                  <p>{group.items}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <section id="training" aria-labelledby="training-h">
-            <h2 id="training-h">Training</h2>
+          <section id="qualifications" aria-labelledby="qualifications-h">
+            <h2 id="qualifications-h">Qualifications</h2>
             <ul className="rows">
               {learning.map((course) => (
                 <li key={course.name}>
                   <span className="when">{formatRange(course.start, course.end)}</span>
                   <span className="what">
-                    <strong>{course.name}</strong>, {course.provider}
+                    {/* Add a "link" in timeline.json to make the name link to the certificate. */}
+                    <strong>{course.link ? <a className="inline-link" href={course.link}>{course.name}</a> : course.name}</strong>, {course.provider}
                     {course.status === 'in progress' && <span>In progress</span>}
                   </span>
                 </li>
