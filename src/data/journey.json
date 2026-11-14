@@ -15,7 +15,7 @@
       "teaser": "Migrated broadcast collections onto one accessible platform and gave the marketing and content teams the WordPress tools to publish on their own.",
       "highlight": "Collection migration, WordPress development, custom templates and shortcodes, plugins, REST APIs, UI/UX",
       "intro": [
-        "Learning on Screen (the British Universities and Colleges Film and Video Council) is an educational charity that works with around 200 member institutions in higher, further and school education. Its services include Box of Broadcasts (BoB), an on-demand TV and radio service, and TRILT, an index of UK broadcast listings covering more than 560 channels from 1923 onwards.",
+        "Learning on Screen (the British Universities and Colleges Film and Video Council) is an educational charity working with around 200 member institutions across higher, further and school education. Its services include [Box of Broadcasts (BoB)](https://learningonscreen.ac.uk/ondemand/), an on-demand television and radio streaming service, and the Television and Radio Index for Learning and Teaching (TRILT), which indexes UK broadcast listings from more than 560 channels, from 1923 onwards.",
         "I joined a small Agile development team and grew into a role that sat between development, marketing and content, UX, and the membership team who work with students, academics and researchers."
       ],
       "stories": [
@@ -23,14 +23,14 @@
           "id": "collections",
           "title": "Bringing the collections into one accessible home",
           "situation": {
-            "text": "The broadcast collections, including TRILT, still sat on the older BUFVC website (bufvc.ac.uk). The organisation had changed its name to Learning on Screen and had been moving its content to learningonscreen.ac.uk since 2020. Because the collections were on a separate domain, with a different look, navigation and login, users had to move between two websites, which broke their journey."
+            "text": "The organisation was going through a digital transformation after the British Universities Film & Video Council (BUFVC) rebranded as Learning on Screen in 2015, but many collections were still on the old BUFVC website. Because they sat on a separate domain, with a different look, navigation and login, users had to move between two websites, which broke their journey."
           },
           "task": {
             "text": "Move the collections to the new platform without losing data, and make them consistent and accessible for every user."
           },
           "action": [
             {
-              "text": "Migrated the collections, including TRILT, Channel 4 Press Packs, Independent Radio and News on Screen."
+              "text": "Migrated the broadcast collections and research databases listed below onto the new platform."
             },
             {
               "text": "Rebuilt the search forms, record views and audio players to be responsive and WCAG-compliant."
@@ -130,7 +130,25 @@
                 }
               ]
             }
-          ]
+          ],
+          "collections": {
+            "label": "Collections migrated",
+            "items": [
+              "TRILT",
+              "TVTiP",
+              "Channel 4 Press Packs",
+              "This Week",
+              "News on Screen",
+              "David Lean & Gaumont Sound News",
+              "UPITN",
+              "Roundabout",
+              "Shakespeare Database",
+              "Women's Work in British Film and Television",
+              "LBC/IRN",
+              "ILR South",
+              "ILR Sharing"
+            ]
+          }
         },
         {
           "id": "publishing",
@@ -470,19 +488,15 @@
     "points": [
       {
         "title": "The work belongs to its owners",
-        "text": "The code, designs and content I produced belong to the organisations and clients I worked for, so I don't publish source code, files or internal documents."
+        "text": "The code, designs and content I produced belong to the organisations and clients I worked for, so I don't keep any source code, files or internal documents once a contract ends or I leave."
       },
       {
         "title": "Why screenshots",
-        "text": "Screenshots show the finished work as users saw it, without sharing anything private. They are only of public pages."
+        "text": "Screenshots show the finished work as visitors saw it. I only use public pages, so nothing that sits behind a login or is for members only appears here."
       },
       {
-        "title": "Learning on Screen",
-        "text": "A rights-focused educational charity, so I don't keep copies of its work. These screenshots are of public pages archived by the Internet Archive's Wayback Machine, so some embedded videos don't play."
-      },
-      {
-        "title": "Work not yet launched",
-        "text": "Where a project hasn't launched, as with the I Like Music relaunch, I show only a simplified wireframe and the colour scheme, not the design itself."
+        "title": "Archived and unreleased work",
+        "text": "Some screenshots come from public pages archived by the Internet Archive's Wayback Machine, so a few embedded videos don't play. Where a project hasn't launched yet, I show only a simplified wireframe and the colour scheme, not the design itself."
       },
       {
         "title": "Diagrams and wireframes",

@@ -97,6 +97,14 @@ export function Story({ story, flush }) {
         </li>
         <li><b>Result</b><span className="result"><Text field={story.result} /></span></li>
       </ol>
+      {story.collections && (
+        <div className="collections">
+          <p className="compare-label">{story.collections.label}</p>
+          <ul>
+            {story.collections.items.map((name) => <li key={name}>{name}</li>)}
+          </ul>
+        </div>
+      )}
       {story.galleries?.map((g, i) => (
         <Gallery key={i} gallery={g} />
       ))}

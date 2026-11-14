@@ -221,10 +221,18 @@ dialog.viewer img{display:block;width:auto;max-width:100%;height:auto;margin:0 a
 .journey .examples-lead{margin-top:40px}
 @media (min-width:861px){.principles.three{grid-template-columns:repeat(3,1fr)}}
 
-/* Work page: floating link back to the home page */
-.home-float{position:fixed;right:24px;bottom:24px;z-index:20;display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;background:var(--indigo-deep);color:#fff;font:500 15px/1 var(--display);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;box-shadow:0 6px 20px rgba(29,31,46,.22)}
+/* Work page: floating link back to the home page. Desktop: bottom of the side menu, above the social links; phone: bottom right, clear of the start of text lines. */
+.home-float{position:fixed;left:52px;bottom:88px;z-index:20;display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;background:var(--indigo-deep);color:#fff;font:500 15px/1 var(--display);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;box-shadow:0 6px 20px rgba(29,31,46,.22)}
 .home-float:hover{background:var(--indigo)}
 @media (max-width:860px){
-  .home-float{right:16px;bottom:16px;padding:11px 16px;font-size:14px}
+  .home-float{left:auto;right:16px;bottom:16px;padding:11px 16px;font-size:14px}
   .rail.trail .brand::after{content:"›";margin-left:12px;color:var(--muted);font-weight:400}
 }
+
+/* Clear in-text links (e.g. the note under the Work intro, Box of Broadcasts) */
+.inline-link{color:var(--indigo);font-weight:600;text-decoration:underline;text-decoration-color:var(--peach);text-decoration-thickness:2px;text-underline-offset:4px}
+.inline-link:hover{color:var(--indigo-deep);text-decoration-color:var(--indigo)}
+/* Work page: list of migrated collections */
+.collections{margin:8px 0 28px}
+.collections ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.collections li{padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--rail-bg);font-size:14px;line-height:1.3}
