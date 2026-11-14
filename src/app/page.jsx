@@ -1,6 +1,5 @@
 import Rail from '@/components/Rail';
 import { HOME_NAV } from '@/lib/nav';
-import { getPosts } from '@/lib/blog';
 import Hero from '@/components/Hero';
 import timeline from '@/data/timeline.json';
 import work from '@/data/work.json';
@@ -11,15 +10,13 @@ import { formatRange } from '@/lib/format';
 // (the work stories, shown in full on /work) and src/data/timeline.json (experience and qualifications).
 export default function Home() {
   const { site, about } = work;
-  // The Blog link only appears once at least one post is published.
-  const nav = getPosts().length > 0 ? HOME_NAV : HOME_NAV.filter((i) => i.href !== '/blog');
   const { experience, learning } = timeline;
 
   return (
     <>
       <a className="skip" href="#content">Skip to content</a>
       <div className="frame">
-        <Rail name={site.name} showBrand={false} items={nav} github={site.github} linkedin={site.linkedin} />
+        <Rail name={site.name} showBrand={false} items={HOME_NAV} github={site.github} linkedin={site.linkedin} />
 
         <main id="content">
           <Hero

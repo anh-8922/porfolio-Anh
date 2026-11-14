@@ -1,5 +1,5 @@
 {
-  "_notes": "Blog posts. A post with \"draft\": true shows when running `npm run dev` (and in review builds) but is hidden on the live site, and the Blog menu item only appears once at least one post is published. Body blocks: {\"p\"}, {\"h2\"}, {\"ul\"}, {\"ol\"}, and {\"todo\"} for reminders that never show on the live site. Write links as [text](url) and bold as **text**.",
+  "_notes": "Blog posts. A post with \"draft\": true shows when running `npm run dev` (and in review builds) but is hidden on the live site,. Body blocks: {\"p\"}, {\"h2\"}, {\"ul\"}, {\"ol\"}, and {\"todo\"} for reminders that never show on the live site. Write links as [text](url) and bold as **text**.",
   "intro": {
     "title": "Notes and reading",
     "lead": "What I've learned from books, courses and real projects about building websites that work for the people who use them."
@@ -9,9 +9,13 @@
       "slug": "inclusive-components",
       "title": "Inclusive Components: building interface parts that work for everyone",
       "date": "2026-11-14",
-      "draft": true,
+      "draft": false,
       "summary": "Heydon Pickering's book takes common interface components one at a time and shows how to make each one accessible. Here's what I took from it, and how it connects to the components I built at Learning on Screen.",
-      "tags": ["Accessibility", "Front end", "Books"],
+      "tags": [
+        "Accessibility",
+        "Front end",
+        "Books"
+      ],
       "source": {
         "title": "Inclusive Components",
         "by": "Heydon Pickering",
@@ -19,33 +23,59 @@
         "href": "http://book.inclusive-components.design/"
       },
       "related": [
-        { "label": "Learning on Screen: page components for editors", "href": "/work#los" }
+        {
+          "label": "Learning on Screen: page components for editors",
+          "href": "/work#los"
+        }
       ],
       "body": [
-        { "p": "Inclusive Components by Heydon Pickering is a practical book about accessible front-end development. Each chapter takes one common interface component and works through how to build it so that it works for everyone, including people who use a keyboard, a screen reader or other assistive technology." },
-        { "h2": "One component at a time" },
-        { "p": "The book covers twelve components: toggle buttons, a to-do list, menus and menu buttons, tooltips and toggletips, a theme switcher, tabbed interfaces, collapsible sections, a content slider, notifications, data tables, modal dialogs and cards." },
-        { "p": "What I like is that it doesn't just list rules. Each chapter starts from what the component is for, then builds it up step by step, often with plain, semantic HTML as the starting point." },
-        { "h2": "Why it mattered for my work" },
-        { "p": "At Learning on Screen I built reusable components that editors could add to any page, including tabs, an accordion, cards and a video player. Several of those have their own chapter in this book. Tabs and collapsible sections look simple, but they need the right markup, keyboard behaviour and focus handling to work for everyone." },
-        { "todo": "Add: one change you made to a component because of the book, for example how the accordion buttons or the tabs handle the keyboard." },
-        { "h2": "What I took from it" },
-        { "ul": [
-          "Start with semantic HTML. It gives you a lot of accessibility for free.",
-          "Use ARIA to fill gaps, not to replace native elements.",
-          "Test with a keyboard and a screen reader, not only a checklist.",
-          "A component isn't finished until it works for everyone who uses the page."
-        ] },
-        { "p": "It pairs well with [Don't Make Me Think](/blog/dont-make-me-think): Krug explains why pages should be easy to use, and Pickering shows how to build the parts that make them so." }
+        {
+          "p": "Inclusive Components by Heydon Pickering is a practical book about accessible front-end development. Each chapter takes one common interface component and works through how to build it so that it works for everyone, including people who use a keyboard, a screen reader or other assistive technology."
+        },
+        {
+          "h2": "One component at a time"
+        },
+        {
+          "p": "The book covers twelve components: toggle buttons, a to-do list, menus and menu buttons, tooltips and toggletips, a theme switcher, tabbed interfaces, collapsible sections, a content slider, notifications, data tables, modal dialogs and cards."
+        },
+        {
+          "p": "What I like is that it doesn't just list rules. Each chapter starts from what the component is for, then builds it up step by step, often with plain, semantic HTML as the starting point."
+        },
+        {
+          "h2": "Why it mattered for my work"
+        },
+        {
+          "p": "At Learning on Screen I built reusable components that editors could add to any page, including tabs, an accordion, cards and a video player. Several of those have their own chapter in this book. Tabs and collapsible sections look simple, but they need the right markup, keyboard behaviour and focus handling to work for everyone."
+        },
+        {
+          "todo": "Add: one change you made to a component because of the book, for example how the accordion buttons or the tabs handle the keyboard."
+        },
+        {
+          "h2": "What I took from it"
+        },
+        {
+          "ul": [
+            "Start with semantic HTML. It gives you a lot of accessibility for free.",
+            "Use ARIA to fill gaps, not to replace native elements.",
+            "Test with a keyboard and a screen reader, not only a checklist.",
+            "A component isn't finished until it works for everyone who uses the page."
+          ]
+        },
+        {
+          "p": "It pairs well with [Don't Make Me Think](/blog/dont-make-me-think): Krug explains why pages should be easy to use, and Pickering shows how to build the parts that make them so."
+        }
       ]
     },
     {
       "slug": "twelve-factor-app",
       "title": "The Twelve-Factor App, and the outage that made it click",
       "date": "2026-11-14",
-      "draft": true,
+      "draft": false,
       "summary": "A short set of principles for building web applications that are easy to deploy and maintain. I met it on the IBM DevOps course, but it only really made sense after real work at I Like Music.",
-      "tags": ["Software engineering", "DevOps"],
+      "tags": [
+        "Software engineering",
+        "DevOps"
+      ],
       "source": {
         "title": "The Twelve-Factor App",
         "by": "Adam Wiggins and developers at Heroku",
@@ -53,70 +83,129 @@
         "href": "https://12factor.net/"
       },
       "related": [
-        { "label": "IBM DevOps and Software Engineering Professional Certificate", "href": "/#qualifications" },
-        { "label": "I Like Music: marketing site and platform work", "href": "/work#ilm" }
+        {
+          "label": "IBM DevOps and Software Engineering Professional Certificate",
+          "href": "/#qualifications"
+        },
+        {
+          "label": "I Like Music: marketing site and platform work",
+          "href": "/work#ilm"
+        }
       ],
       "body": [
-        { "p": "The Twelve-Factor App is a set of principles for building web applications that are easy to deploy, scale and maintain. It was drafted by developers at Heroku and first presented by Adam Wiggins around 2011. I came across it during the IBM DevOps and Software Engineering Professional Certificate." },
-        { "todo": "Confirm which course in the IBM certificate covered it, for example the microservices course." },
-        { "h2": "The twelve factors in brief" },
-        { "ol": [
-          "Codebase: one codebase in version control, deployed to many environments.",
-          "Dependencies: declare them explicitly and keep them isolated.",
-          "Config: keep settings that change between environments out of the code.",
-          "Backing services: treat databases, queues and caches as attached resources.",
-          "Build, release, run: keep these stages strictly separate.",
-          "Processes: run the app as stateless processes.",
-          "Port binding: the app exports its service through a port.",
-          "Concurrency: scale out by running more processes.",
-          "Disposability: start fast and shut down gracefully.",
-          "Dev/prod parity: keep development, staging and production as similar as possible.",
-          "Logs: treat logs as event streams.",
-          "Admin processes: run one-off tasks in the same environment as the app."
-        ] },
-        { "h2": "Where I've seen it matter" },
-        { "p": "Some of the factors only clicked once I'd seen them in real work at I Like Music." },
-        { "p": "**Dev/prod parity.** A plugin update once took a business-critical WordPress site offline because it needed a newer PHP version than the server had. With our DevOps engineer, it was back within an hour, but the lesson stuck: environments that drift apart cause surprises. Since then, updates are tested on staging before they go live." },
-        { "p": "**Processes and disposability.** On the new platform, catalogue data was handled by AWS Lambda consumers. Each run is short-lived and keeps nothing it needs later, which is what the factors describe: anything that has to last lives in a backing service such as a database, so instances can start and stop safely." },
-        { "todo": "Add, if true: any other factor you saw in practice, for example config kept in the environment or logs you used to trace an ingestion problem." },
-        { "h2": "What I take from it" },
-        { "p": "I don't treat the twelve factors as strict rules, and a WordPress marketing site isn't a cloud-native app. But the questions behind them are useful on any project. Can someone else run this? Will it behave the same in production as it did in testing? Can it recover if something fails?" }
+        {
+          "p": "The Twelve-Factor App is a set of principles for building web applications that are easy to deploy, scale and maintain. It was drafted by developers at Heroku and first presented by Adam Wiggins around 2011. I came across it during the IBM DevOps and Software Engineering Professional Certificate."
+        },
+        {
+          "todo": "Confirm which course in the IBM certificate covered it, for example the microservices course."
+        },
+        {
+          "h2": "The twelve factors in brief"
+        },
+        {
+          "ol": [
+            "Codebase: one codebase in version control, deployed to many environments.",
+            "Dependencies: declare them explicitly and keep them isolated.",
+            "Config: keep settings that change between environments out of the code.",
+            "Backing services: treat databases, queues and caches as attached resources.",
+            "Build, release, run: keep these stages strictly separate.",
+            "Processes: run the app as stateless processes.",
+            "Port binding: the app exports its service through a port.",
+            "Concurrency: scale out by running more processes.",
+            "Disposability: start fast and shut down gracefully.",
+            "Dev/prod parity: keep development, staging and production as similar as possible.",
+            "Logs: treat logs as event streams.",
+            "Admin processes: run one-off tasks in the same environment as the app."
+          ]
+        },
+        {
+          "h2": "Where I've seen it matter"
+        },
+        {
+          "p": "Some of the factors only clicked once I'd seen them in real work at I Like Music."
+        },
+        {
+          "p": "**Dev/prod parity.** A plugin update once took a business-critical WordPress site offline because it needed a newer PHP version than the server had. With our DevOps engineer, it was back within an hour, but the lesson stuck: environments that drift apart cause surprises. Since then, updates are tested on staging before they go live."
+        },
+        {
+          "p": "**Processes and disposability.** On the new platform, catalogue data was handled by AWS Lambda consumers. Each run is short-lived and keeps nothing it needs later, which is what the factors describe: anything that has to last lives in a backing service such as a database, so instances can start and stop safely."
+        },
+        {
+          "todo": "Add, if true: any other factor you saw in practice, for example config kept in the environment or logs you used to trace an ingestion problem."
+        },
+        {
+          "h2": "What I take from it"
+        },
+        {
+          "p": "I don't treat the twelve factors as strict rules, and a WordPress marketing site isn't a cloud-native app. But the questions behind them are useful on any project. Can someone else run this? Will it behave the same in production as it did in testing? Can it recover if something fails?"
+        }
       ]
     },
     {
       "slug": "dont-make-me-think",
       "title": "What Don't Make Me Think taught me about building websites",
       "date": "2026-11-14",
-      "draft": true,
+      "draft": false,
       "summary": "Steve Krug's book on web usability shaped how I approach every page I build. Here's what stuck, and how I used it at Learning on Screen.",
-      "tags": ["Usability", "Front end", "Books"],
+      "tags": [
+        "Usability",
+        "Front end",
+        "Books"
+      ],
       "source": {
         "title": "Don't Make Me Think, Revisited",
         "by": "Steve Krug",
         "detail": "3rd edition, New Riders"
       },
       "related": [
-        { "label": "Learning on Screen: collections and publishing tools", "href": "/work#los" }
+        {
+          "label": "Learning on Screen: collections and publishing tools",
+          "href": "/work#los"
+        }
       ],
       "body": [
-        { "p": "Steve Krug's Don't Make Me Think is a short, funny book about web usability, and its main idea is in the title: a page should be self-evident. Visitors shouldn't have to stop and work out what something is, where a link goes or what to do next." },
-        { "h2": "How people really use websites" },
-        { "p": "Krug's point is that we design pages for careful readers, but most visitors don't read. They scan, pick the first option that looks good enough, and muddle through. Once I accepted that, a lot of decisions became simpler." },
-        { "ul": [
-          "Put the key information first, so someone scanning finds it straight away.",
-          "Use clear headings that describe what's in each section.",
-          "Write links that say where they lead.",
-          "Keep the navigation in the same place on every page.",
-          "Cut words that don't help the visitor."
-        ] },
-        { "h2": "Putting it into practice" },
-        { "p": "At Learning on Screen, many of the broadcast collections were still on the old BUFVC website, with a different look, navigation and login. That's exactly the moment Krug warns about: users had to stop and work out where they were. Bringing the collections onto one platform, with the same header and menus across both sites, meant the navigation stayed in the same place wherever people went." },
-        { "p": "It also shaped the components I built for editors. A hero, tabs or an accordion is only useful if it helps visitors find things faster, so each one needed a clear purpose, not just a good look." },
-        { "todo": "Add: one specific page or decision where you applied the book, and what changed." },
-        { "h2": "Usability and accessibility go together" },
-        { "p": "The revised edition has a chapter on accessibility, and it makes a point I agree with: making a site clearer for people with disabilities usually makes it clearer for everyone. That's why I treat usability and WCAG compliance as one job, not two. For the building side of that, see [Inclusive Components](/blog/inclusive-components)." },
-        { "h2": "Why I still recommend it" },
-        { "p": "It's a quick read, and you don't need to be a developer to get something from it. If you work on a website in any role, it gives you a simple question to ask of every page: does this make me think?" }
+        {
+          "p": "Steve Krug's Don't Make Me Think is a short, funny book about web usability, and its main idea is in the title: a page should be self-evident. Visitors shouldn't have to stop and work out what something is, where a link goes or what to do next."
+        },
+        {
+          "h2": "How people really use websites"
+        },
+        {
+          "p": "Krug's point is that we design pages for careful readers, but most visitors don't read. They scan, pick the first option that looks good enough, and muddle through. Once I accepted that, a lot of decisions became simpler."
+        },
+        {
+          "ul": [
+            "Put the key information first, so someone scanning finds it straight away.",
+            "Use clear headings that describe what's in each section.",
+            "Write links that say where they lead.",
+            "Keep the navigation in the same place on every page.",
+            "Cut words that don't help the visitor."
+          ]
+        },
+        {
+          "h2": "Putting it into practice"
+        },
+        {
+          "p": "At Learning on Screen, many of the broadcast collections were still on the old BUFVC website, with a different look, navigation and login. That's exactly the moment Krug warns about: users had to stop and work out where they were. Bringing the collections onto one platform, with the same header and menus across both sites, meant the navigation stayed in the same place wherever people went."
+        },
+        {
+          "p": "It also shaped the components I built for editors. A hero, tabs or an accordion is only useful if it helps visitors find things faster, so each one needed a clear purpose, not just a good look."
+        },
+        {
+          "todo": "Add: one specific page or decision where you applied the book, and what changed."
+        },
+        {
+          "h2": "Usability and accessibility go together"
+        },
+        {
+          "p": "The revised edition has a chapter on accessibility, and it makes a point I agree with: making a site clearer for people with disabilities usually makes it clearer for everyone. That's why I treat usability and WCAG compliance as one job, not two. For the building side of that, see [Inclusive Components](/blog/inclusive-components)."
+        },
+        {
+          "h2": "Why I still recommend it"
+        },
+        {
+          "p": "It's a quick read, and you don't need to be a developer to get something from it. If you work on a website in any role, it gives you a simple question to ask of every page: does this make me think?"
+        }
       ]
     }
   ]

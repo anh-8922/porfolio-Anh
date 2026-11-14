@@ -277,7 +277,7 @@ All rights reserved. Content and code © Anh Chau.
 ## 🔄 Updates
 
 ### Latest Changes
-- ✅ Blog at `/blog` with draft support; Blog menu item appears once a post is published
+- ✅ Blog at `/blog` with three published posts and draft support; Home and Blog in the home page menu
 - ✅ Home: Skills section replaced by a key-tools line in About; Training renamed Qualifications; work shown as cards
 - ✅ Hero: preview card and vertical tab replaced by two clear buttons (See my work, Get in touch)
 - ✅ Work page: menu lists only the three chapters, floating Home button, Usage notes section, wireframes and colour schemes for unreleased or private work
@@ -327,4 +327,4 @@ If you have questions or need help:
 Posts live in `src/data/blog.json`. Each post has a `slug`, `title`, `date` (YYYY-MM-DD), `summary`, `tags`, an optional `source` (the book or article) and `related` links, and a `body` made of blocks: `{"p": "..."}`, `{"h2": "..."}`, `{"ul": [...]}`, `{"ol": [...]}` and `{"todo": "..."}` for notes to yourself. Write links as `[text](url)` and bold as `**text**`.
 
 - `"draft": true` shows the post in `npm run dev` but hides it on the live site. Remove it (or set `false`) to publish.
-- The **Blog** menu item on the home page only appears once at least one post is published.
+- The **Blog** link is always in the home page menu (`src/lib/nav.js`).
