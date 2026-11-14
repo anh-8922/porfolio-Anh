@@ -7,29 +7,26 @@ import work from '@/data/work.json';
 export const metadata = {
   title: 'Selected work · Anh Chau',
   description:
-    'Anh Chau, web developer: selected work at Learning on Screen, for freelance clients and at I Like Music, told as short case studies with screenshots.',
+    'Anh Chau, web developer: selected work at Learning on Screen, for Symba Marketing and at I Like Music, told as short case studies.',
 };
 
-const NAV = [
-  { href: '#top', label: 'Overview' },
-  ...journey.chapters.map((c) => ({ href: `#${c.id}`, label: c.name })),
-  { href: '#learned', label: 'What I learned' },
-];
+// The menu lists only the work itself; the overview, lessons and usage notes are reached by scrolling.
+const NAV = journey.chapters.map((c) => ({ href: `#${c.id}`, label: c.name }));
 
 // Content lives in src/data/journey.json.
 export default function WorkPage() {
   const { site } = work;
-  const { intro, chapters, lessons } = journey;
+  const { intro, chapters, lessons, examples } = journey;
 
   return (
     <>
       <a className="skip" href="#content">Skip to content</a>
       <div className="frame">
         <Rail
-          name={site.name}
-          brandHref="/"
+          name="Anh's work"
+          brandHref="#top"
+          trail
           items={NAV}
-          backLink={{ href: '/', label: 'Back to home' }}
           github={site.github}
           linkedin={site.linkedin}
         />
@@ -49,7 +46,7 @@ export default function WorkPage() {
                 </li>
               ))}
             </ol>
-            <p className="note">{intro.note}</p>
+            <p className="note">{intro.note} <a href="#examples">How I show it</a></p>
           </section>
 
           {chapters.map((chapter, ci) => (
@@ -81,11 +78,28 @@ export default function WorkPage() {
             </div>
           </section>
 
+          <section id="examples" aria-labelledby="examples-h">
+            <p className="eyebrow">{examples.eyebrow}</p>
+            <h2 id="examples-h">{examples.title}</h2>
+            <div className="principles three">
+              {examples.points.map((p) => (
+                <div key={p.title}>
+                  <h3>{p.title}</h3>
+                  <p>{p.text}</p>
+                </div>
+              ))}
+            </div>
+            <p className="lead examples-lead">{examples.lead}</p>
+          </section>
+
           <footer className="site-footer">
             © {new Date().getFullYear()} {site.name} · <a href="/">Back to home</a>
           </footer>
         </main>
       </div>
+      <a className="home-float" href="/" aria-label="Back to the home page">
+        <span aria-hidden="true">←</span> Home
+      </a>
       <ShotViewer />
     </>
   );

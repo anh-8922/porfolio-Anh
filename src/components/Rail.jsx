@@ -14,8 +14,10 @@ const HOME_NAV = [
 // Left-hand rail on desktop, sticky top bar on small screens.
 // Marks the link for the section currently in view. Pages can pass their own menu items.
 // showBrand: the home page hides the name here because the hero already shows it.
-export default function Rail({ name, github, linkedin, items = HOME_NAV, brandHref = '#top', backLink, showBrand = true }) {
-  const [current, setCurrent] = useState(items[0]?.href);
+// trail: shows the brand as the parent of the menu items ("Anh's work › …") in the small-screen bar.
+export default function Rail({ name, github, linkedin, items = HOME_NAV, brandHref = '#top', backLink, showBrand = true, trail = false }) {
+  // Nothing is marked until a listed section scrolls into view (the home page starts on #top).
+  const [current, setCurrent] = useState(items[0]?.href === '#top' ? '#top' : null);
 
   useEffect(() => {
     if (!('IntersectionObserver' in window)) return undefined;
@@ -34,17 +36,25 @@ export default function Rail({ name, github, linkedin, items = HOME_NAV, brandHr
     return () => observer.disconnect();
   }, [items]);
 
+  // Items marked secondary (e.g. supporting sections) sit in a smaller group under the main links.
+  const link = ({ href, label }) => (
+    <li key={href}>
+      <a href={href} aria-current={current === href ? 'true' : undefined}>{label}</a>
+    </li>
+  );
+
   return (
-    <header className="rail">
+    <header className={`rail${trail ? ' trail' : ''}`}>
       {showBrand && <a className="brand" href={brandHref}>{name}</a>}
       <nav className="nav" aria-label="Main">
         <ul>
-          {items.map(({ href, label }) => (
-            <li key={href}>
-              <a href={href} aria-current={current === href ? 'true' : undefined}>{label}</a>
-            </li>
-          ))}
+          {items.filter((i) => !i.secondary).map(link)}
         </ul>
+        {items.some((i) => i.secondary) && (
+          <ul className="nav-sub">
+            {items.filter((i) => i.secondary).map(link)}
+          </ul>
+        )}
       </nav>
       <div className="rail-foot">
         {backLink && <a className="back" href={backLink.href}>← {backLink.label}</a>}
