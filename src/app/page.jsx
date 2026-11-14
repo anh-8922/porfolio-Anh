@@ -42,7 +42,7 @@ export default function Home() {
                 <li key={c.id}>
                   <a className="work-card" href={`/work#${c.id}`}>
                     <div className="cover">
-                      <img src={c.cover} alt="" />
+                      <img src={c.cover} alt="" loading="lazy" decoding="async" />
                     </div>
                     <div className="card-body">
                       <p className="eyebrow">{c.name}</p>

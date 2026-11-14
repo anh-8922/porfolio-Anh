@@ -7,7 +7,7 @@ import { HOME_NAV } from '@/lib/nav';
 // Marks the link for the section currently in view. Pages can pass their own menu items.
 // showBrand: the home page hides the name here because the hero already shows it.
 // trail: shows the brand as the parent of the menu items ("Anh's work › …") in the small-screen bar.
-export default function Rail({ name, github, linkedin, items = HOME_NAV, brandHref = '#top', backLink, showBrand = true, trail = false }) {
+export default function Rail({ name, github, linkedin, items = HOME_NAV, brandHref = '#top', showBrand = true, trail = false }) {
   // Nothing is marked until a listed section scrolls into view (the home page starts on #top).
   const [current, setCurrent] = useState(items[0]?.href === '#top' ? '#top' : null);
 
@@ -29,7 +29,6 @@ export default function Rail({ name, github, linkedin, items = HOME_NAV, brandHr
     return () => observer.disconnect();
   }, [items]);
 
-  // Items marked secondary (e.g. supporting sections) sit in a smaller group under the main links.
   const link = ({ href, label }) => (
     <li key={href}>
       <a href={href} aria-current={current === href ? 'true' : undefined}>{label}</a>
@@ -40,17 +39,9 @@ export default function Rail({ name, github, linkedin, items = HOME_NAV, brandHr
     <header className={`rail${trail ? ' trail' : ''}`}>
       {showBrand && <a className="brand" href={brandHref}>{name}</a>}
       {items.length > 0 && <nav className="nav" aria-label="Main">
-        <ul>
-          {items.filter((i) => !i.secondary).map(link)}
-        </ul>
-        {items.some((i) => i.secondary) && (
-          <ul className="nav-sub">
-            {items.filter((i) => i.secondary).map(link)}
-          </ul>
-        )}
+        <ul>{items.map(link)}</ul>
       </nav>}
       <div className="rail-foot">
-        {backLink && <a className="back" href={backLink.href}>← {backLink.label}</a>}
         <div className="social">
           <a href={github} target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href={linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>

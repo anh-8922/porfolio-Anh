@@ -81,7 +81,7 @@ anh-portfolio/
 │   │   ├── journey.json      # ← Work page stories, screenshots and lessons learned
 │   │   └── timeline.json     # ← Experience and qualifications
 │   └── lib/format.js         # Date formatting
-├── next.config.js            # Includes the /projects → /#work redirect
+├── next.config.js            # Includes the /projects → /work redirect
 └── ...
 ```
 
@@ -128,7 +128,7 @@ npm start
 
 ## 📄 Pages
 
-- **`/`** - home: introduction, a short summary of each work chapter, experience, qualifications and contact.
+- **`/`** - home: hero with two buttons, about (with key tools), a card for each work chapter, experience, qualifications and contact.
 - **`/blog`** - blog index; **`/blog/<slug>`** - a single post.
 - **`/work`** - the full work stories with screenshots, for presenting or reading in depth.
 - **`/projects`** - permanently redirects to `/work`, so old links still work.
@@ -140,7 +140,9 @@ npm start
 ### Update content
 
 - **Work stories and screenshots:** `src/data/journey.json`. Screenshots live in `public/work/` (WebP, about 100KB each). Any `"todo"` field is a reminder: it shows highlighted in `npm run dev`, is hidden on the live site, and can be shown in a review build with `NEXT_PUBLIC_SHOW_TODOS=1 npm run build`.
-- **Skills, about text, contact links:** `src/data/work.json`. `site.heroName` sets the big name in the hero: `{ "single": "Anh Chau" }` for one line (current), or `{ "top": "Chau", "bottom": "Anh" }` for a small line over a large one. Each case study has `org`, `years`, `title`, `summary`, `facts`, `points` and an optional `link`.
+- **About text, key tools, contact links:** `src/data/work.json`. `site.heroName` sets the big name in the hero: `{ "single": "Anh Chau" }` for one line (current), or `{ "top": "Chau", "bottom": "Anh" }` for a small line over a large one. `about.tools` is the "Tools I work with" line.
+- **Home page work cards:** each chapter in `journey.json` has a `cover` image, `headline`, `teaser` and `highlight` (the first four key skills become tags).
+- **Menu:** the home page menu is in `src/lib/nav.js`.
 - **Experience and qualifications:** `src/data/timeline.json` (newest first). Experience rows show `role`, `company` and `summary`; qualification rows show `name`, `provider` and dates, with `"status": "in progress"` for a badge and an optional `"link"` to the certificate.
 - **Dates:** `"YYYY-MM"` or `"YYYY"`; `"end": null` shows "Present".
 
@@ -275,9 +277,14 @@ All rights reserved. Content and code © Anh Chau.
 ## 🔄 Updates
 
 ### Latest Changes
+- ✅ Blog at `/blog` with draft support; Blog menu item appears once a post is published
+- ✅ Home: Skills section replaced by a key-tools line in About; Training renamed Qualifications; work shown as cards
+- ✅ Hero: preview card and vertical tab replaced by two clear buttons (See my work, Get in touch)
+- ✅ Work page: menu lists only the three chapters, floating Home button, Usage notes section, wireframes and colour schemes for unreleased or private work
+- ✅ Removed unused menu options (secondary links, back link) and old styles
 - ✅ New `/work` page: STAR stories for Learning on Screen, freelance and I Like Music, with archived and live screenshots and a full-size viewer
 - ✅ Home Work section now summarises each chapter and links to the full story
-- ✅ New hero: indigo panel with original SVG line artwork (thin peach lines and one soft glow) and a "Selected work" card
+- ✅ New hero: indigo panel with original SVG line artwork (thin peach lines and one soft glow)
 - ✅ Light page kept; removed duplicated section labels
 - ✅ Menu rail now has its own tint and divider so it stays readable beside the content
 - ✅ Redesigned as a light, one-page "less is more" layout: side rail, colour-panel hero, case studies
