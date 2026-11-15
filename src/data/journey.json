@@ -152,9 +152,9 @@
         },
         {
           "id": "publishing",
-          "title": "Giving the marketing and content teams the tools to publish",
+          "title": "Building flexible publishing tools for marketing campaigns, academic and research content",
           "situation": {
-            "text": "The marketing and content teams needed to build and update pages themselves, but the WordPress theme didn't have the building blocks they needed. At the same time, an external agency was redesigning the main website."
+            "text": "Learning on Screen needed a CMS that would let its marketing and content teams create, edit and publish their own pages, from marketing campaigns to academic content such as courses and research."
           },
           "task": {
             "text": "Fill the gaps in the platform and make sure colleagues could publish confidently once the new site launched."
@@ -167,7 +167,7 @@
               "text": "Integrated Advanced Custom Fields, MailerLite sign-ups, Google Tag Manager and cookie consent."
             },
             {
-              "text": "Coordinated reviews of the agency's work with the content strategist and marketing specialist through Jira, Teams and meetings, and handled the handover with our tech lead."
+              "text": "Coordinated reviews of an external agency's redesign of the main website with the content strategist and marketing specialist through Jira, Teams and meetings, and handled the handover with our tech lead."
             },
             {
               "text": "Trained marketing colleagues to publish content in WordPress: wrote guides, presented to the team, ran one-to-one sessions and followed up with drop-in help by Teams message and email."
@@ -177,7 +177,7 @@
             }
           ],
           "result": {
-            "text": "The content team could build and publish pages without waiting for a developer, including the copyright courses, research, about and awards pages."
+            "text": "The WordPress platform runs on a custom theme with a library of around 45 in-house shortcodes, from heroes, tiles and cards to accordions, tabs and video players, plus in-house plugins such as a lightweight SEO plugin. Editors can combine these into flexible pages without writing code, and the same platform supported the collections migration, with custom templates and the REST API endpoint that shares its menus with the collections application. The content strategist, Head of Marketing, marketing specialist and membership manager all used it to create and update content themselves, including the copyright courses, research, about and awards pages."
           },
           "galleries": [
             {
@@ -296,7 +296,7 @@
       "stories": [
         {
           "id": "symba",
-          "title": "Symba Marketing: from first build to a CMS the client runs",
+          "title": "Symba Marketing: building a new Wix website the team can run themselves",
           "situation": {
             "text": "Symba Marketing supports charities, CICs and social enterprises with marketing. It needed a website that explained its services clearly and brought in enquiries."
           },
@@ -308,7 +308,7 @@
               "text": "Planned the page structure and navigation with the client before building."
             },
             {
-              "text": "Built the site with clear calls to action to book a free consultation."
+              "text": "Built the site on Wix, with clear calls to action to book a free consultation."
             },
             {
               "text": "Covered SEO, Core Web Vitals and accessibility."
@@ -347,7 +347,7 @@
       "role": "Contract Full-Stack Developer",
       "dates": "Oct 2025 – Sep 2026",
       "headline": "A B2B music platform: marketing site, relaunch and catalogue data",
-      "teaser": "Managed a business-critical WordPress marketing site, built its relaunch, and worked on catalogue data for the new platform.",
+      "teaser": "Supported the team through a technical migration, built features for the new platform and developed the new marketing site for the relaunch.",
       "highlight": "WordPress site management, data ingestion, front-end development, technical support",
       "stories": [
         {
